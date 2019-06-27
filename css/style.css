@@ -1,0 +1,192 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body, html{
+  overflow: hidden
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+}
+
+#pageContainer{
+  height: 100%;
+  width: 100%;
+  background-image: url('../images/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.getStart{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 1s;
+}
+
+.started{
+  top: 0%;
+  transform: translateY(0%);
+  height: 20vh;
+}
+
+.getStartContent{
+  margin: 0 auto;
+  width: 900px;
+  max-width: 90vw;
+  transition: 1s;
+
+}
+
+.startedContent{
+  height: 100%;
+  width: 500px;
+  transition: 1s;
+  text-align: center;
+}
+
+.image100{
+    /* max-width: 100%; */
+    max-height: 100%;
+    width: 100%;
+}
+
+.btn{
+  background-color: white;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  width: 100%;
+}
+
+.upper{
+  text-transform: uppercase;
+}
+
+.hidden{
+  display: none;
+}
+
+#contentContainer{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  transition: 1s;
+}
+
+.contentContainerStart{
+  bottom: -80vh !important;
+}
+
+#content{
+  margin: 0 auto;
+  background-color: #c8c8c8;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  width: 90%;
+  height: 80vh;
+}
+
+#options{
+  width: 95%;
+  height: 20vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#options h1 {
+  position: absolute;
+  top: 19%;
+  left: 29%;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+  text-align: center;
+  text-transform: uppercase;
+
+}
+
+#hotel{
+  background-color: #808080;
+  border-radius: 10px;
+  position: relative;
+  width: 20%;
+  height: 20%;
+  top: 15%;
+  left: 2.5%;
+}
+
+#motel{
+  background-color: #808080;
+  border-radius: 10px;
+  position: relative;
+  width: 20%;
+  height: 20%;
+  top: 15%;
+  left: 2.5%;
+}
+
+#house{
+  background-color: #808080;
+  border-radius: 10px;
+  position: relative;
+  width: 20%;
+  height: 20%;
+  top: 15%;
+  left: 2.5%;
+}
+
+#hostel{
+  background-color: #808080;
+  border-radius: 10px;
+  position: relative;
+  width: 20%;
+  height: 20%;
+  top: 15%;
+  left: 2.5%;
+}
+
+#location{
+  background-color: white;
+  width: 94.5%;
+  height: 7%;
+  position: relative;
+  bottom: 12%;
+  left: 2.5%;
+  border: 1px solid #808080;
+  border-radius: 10px;
+}
+
+  #location img {
+    width: 20px;
+    height: 20px;
+    top: 13px;
+    left: 10px;
+    position: absolute;
+  }
+
+  #location h1 {
+    position: absolute;
+    top: 13px;
+    left: 40px;
+    color: #c8c8c8;
+    font-family: 'Roboto', sans-serif;
+    font-size: 19px;
+  }
