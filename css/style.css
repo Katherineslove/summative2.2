@@ -163,10 +163,30 @@ body{
   left: 2.5%;
 }
 
+#sections{
+  width: 95%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#sections h1 {
+  position: absolute;
+  top: 19%;
+  left: 29%;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+  text-align: center;
+  text-transform: uppercase;
+
+}
+
 #location{
   background-color: white;
   width: 94.5%;
-  height: 7%;
+  height: 13%;
   position: relative;
   bottom: 12%;
   left: 2.5%;
@@ -189,4 +209,40 @@ body{
     color: #c8c8c8;
     font-family: 'Roboto', sans-serif;
     font-size: 19px;
+  }
+
+.checkIn{
+  background-color: white;
+  width: 94.5%;
+  height: 45px;
+  position: relative;
+  bottom: 7%;
+  left: 2%;
+  border: 1px solid #808080;
+  border-radius: 10px;
+}
+
+  .checkIn img {
+    width: 20px;
+    height: 20px;
+    top: 13px;
+    left: 10px;
+    position: absolute;
+  }
+
+  .checkIn h1 {
+    position: absolute;
+    top: 13px;
+    left: 40px;
+    color: #c8c8c8;
+    font-family: 'Roboto', sans-serif;
+    font-size: 19px;
+  }
+
+  .checkInDD img {
+    width: 20px;
+    height: 20px;
+    top: 13px;
+    left: 88%;
+    position: absolute;
   }
