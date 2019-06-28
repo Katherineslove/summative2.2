@@ -104,7 +104,8 @@ body{
 }
 
 #options{
-  width: 95%;
+  width: 90%;
+  margin-left: 40px;
   height: 20vh;
   display: flex;
   flex-direction: row;
@@ -113,8 +114,8 @@ body{
 
 #options h1 {
   position: absolute;
-  top: 19%;
-  left: 29%;
+  top: 9%;
+  left:  34%;
   color: white;
   font-family: 'Roboto', sans-serif;
   font-size: 25px;
@@ -129,7 +130,7 @@ body{
   position: relative;
   width: 20%;
   height: 20%;
-  top: 15%;
+  top: 30%;
   left: 2.5%;
 }
 
@@ -139,7 +140,7 @@ body{
   position: relative;
   width: 20%;
   height: 20%;
-  top: 15%;
+  top: 30%;
   left: 2.5%;
 }
 
@@ -149,7 +150,7 @@ body{
   position: relative;
   width: 20%;
   height: 20%;
-  top: 15%;
+  top: 30%;
   left: 2.5%;
 }
 
@@ -159,11 +160,12 @@ body{
   position: relative;
   width: 20%;
   height: 20%;
-  top: 15%;
+  top: 30%;
   left: 2.5%;
 }
 
 #sections{
+  margin: 0 auto;
   width: 95%;
   height: 40vh;
   display: flex;
@@ -173,34 +175,32 @@ body{
 
 #sections h1 {
   position: absolute;
-  top: 19%;
-  left: 29%;
-  color: white;
+  top: 33%;
+  left: 7%;
+  color: #c8c8c8;
   font-family: 'Roboto', sans-serif;
   font-size: 25px;
   text-align: center;
-  text-transform: uppercase;
+}
 
+#sectionsIcons{
+  width: 40px;
+  height: 40px;
+  top: 13px;
+  left: 2%;
+  position: absolute;
 }
 
 #location{
   background-color: white;
   width: 94.5%;
-  height: 13%;
+  height: 18%;
   position: relative;
-  bottom: 12%;
+  bottom: 14%;
   left: 2.5%;
   border: 1px solid #808080;
   border-radius: 10px;
 }
-
-  #location img {
-    width: 20px;
-    height: 20px;
-    top: 13px;
-    left: 10px;
-    position: absolute;
-  }
 
   #location h1 {
     position: absolute;
@@ -211,38 +211,98 @@ body{
     font-size: 19px;
   }
 
+#search_term {
+  border-radius: 10px;
+  border: none;
+  left: 7%;
+  top: 30%;
+  position:absolute;
+  outline: none;
+  font-size: 24px;
+}
+
+::placeholder{
+  color: #c8c8c8;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  border: none;
+}
+
 .checkIn{
   background-color: white;
   width: 94.5%;
-  height: 45px;
+  height: 18%;
   position: relative;
-  bottom: 7%;
-  left: 2%;
+  bottom: 5%;
+  left: 2.5%;
   border: 1px solid #808080;
   border-radius: 10px;
 }
 
-  .checkIn img {
-    width: 20px;
-    height: 20px;
-    top: 13px;
-    left: 10px;
+  .checkInDD img{
+    width: 40px;
+    height: 40px;
+    top: 20%;
+    right: 3%;
     position: absolute;
   }
 
-  .checkIn h1 {
-    position: absolute;
-    top: 13px;
-    left: 40px;
-    color: #c8c8c8;
-    font-family: 'Roboto', sans-serif;
-    font-size: 19px;
+.checkOut{
+  background-color: white;
+  width: 94.5%;
+  height: 18%;
+  position: relative;
+  top: 5%;
+  left: 2.5%;
+  border: 1px solid #808080;
+  border-radius: 10px;
+}
+
+    .checkOutDD img{
+      width: 40px;
+      height: 40px;
+      top: 20%;
+      right: 3%;
+      position: absolute;
+    }
+
+.travellers{
+  background-color: white;
+  width: 94.5%;
+  height: 18%;
+  position: relative;
+  top: 15%;
+  left: 2.5%;
+  border: 1px solid #808080;
+  border-radius: 10px;
   }
 
-  .checkInDD img {
-    width: 20px;
-    height: 20px;
-    top: 13px;
-    left: 88%;
-    position: absolute;
-  }
+    .travellersDD img {
+      width: 40px;
+      height: 40px;
+      top: 20%;
+      right: 3%;
+      position: absolute;
+    }
+
+.search{
+  background-color: #808080;
+  width: 35%;
+  height: 18%;
+  position: relative;
+  top: 25%;
+  left: 31%;
+  border: 1px solid #808080;
+  border-radius: 10px;
+}
+
+#searchTitle !important{
+  position: absolute;
+  top: 33%;
+  left: 7%;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+  text-align: center;
+  text-transform: uppercase;
+}

@@ -11,14 +11,14 @@
 
   <div id="pageContainer">
 
-    <div class="getStart started">
-      <div class="getStartContent startedContent">
+    <div class="getStart ">
+      <div class="getStartContent ">
         <img id="logo" class="image100" src="images/logo.png" alt="">
-        <button id="start" class="btn upper hidden">Book your next adventure</button>
+        <button id="start" class="btn upper ">Book your next adventure</button>
       </div>
     </div>
 
-    <div id="contentContainer" class="">
+    <div id="contentContainer" class="contentContainerStart">
       <div id="content">
         <div id="options">
           <div id="hotel">
@@ -39,27 +39,50 @@
         </div>
 
         <div id="sections">
+
           <div id="location">
-            <!-- <img src="images/location.png" alt="icon"> -->
+            <img src="images/location.png" id="sectionsIcons" alt="icon">
 
             <form action="/action_page.php">
 
-              <!-- <input type="text" id="search_term" placeholder="eg. Wellington"> -->
+              <input type="text" id="search_term" placeholder="eg. Wellington">
 
               </form>
           </div>
+
           <div class="checkIn">
-            <!-- <img src="images/calendar.png" alt=""> -->
-            <!-- <label for="start"><h1>Check In:</h1></label> -->
+            <img src="images/calendar.png" id="sectionsIcons" alt="">
+            <label for="start"><h1>Check In:</h1></label>
 
             <!-- <input type="date" id="start" name="trip-start"
                    value="22-07-2019"
                    min="Tues 01-01-2019" max="Tues 31-12-2019"> -->
 
-            <!-- <div class="checkInDD">
+            <div class="checkInDD">
               <img src="images/dropDown.png" alt="icon">
-            </div> -->
+            </div>
           </div>
+
+          <div class="checkOut">
+             <img src="images/calendar.png" id="sectionsIcons" alt="">
+              <h1>Check Out</h1>
+            <div class="checkOutDD">
+              <img src="images/dropDown.png" alt="icon">
+            </div>
+          </div>
+
+          <div class="travellers">
+           <img src="images/travellers.png" id="sectionsIcons" alt="">
+            <h1>Guests</h1>
+            <div class="travellersDD">
+              <img src="images/dropDown.png" alt="icon">
+            </div>
+          </div>
+
+          <div class="search">
+            <h1 id="searchTitle" >SEARCH</h1>
+          </div>
+
         </div>
 
 
