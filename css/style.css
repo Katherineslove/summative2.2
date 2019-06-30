@@ -181,7 +181,7 @@ body{
 #sections h1 {
   position: absolute;
   top: 33%;
-  left: 7%;
+  left: 3%;
   color: #c8c8c8;
   font-family: 'Roboto', sans-serif;
   font-size: 25px;
@@ -208,24 +208,14 @@ body{
   border-radius: 10px;
 }
 
-  /* #location h1 {
-    position: absolute;
-    top: 13px;
-    left: 40px;
-    color: #c8c8c8;
-    font-family: 'Roboto', sans-serif;
-    font-size: 19px;
-  }
-
-#search_term {
-  border-radius: 10px;
+#location input {
+  position: absolute;
+  top: 0;
+  width: 88%;
+  left: 8%;
+  height: 100%;
   border: none;
-  left: 7%;
-  top: 30%;
-  position:absolute;
-  outline: none;
-  font-size: 24px;
-} */
+}
 
 ::placeholder{
   color: #c8c8c8;
@@ -244,14 +234,6 @@ body{
   border: 1px solid #808080;
   border-radius: 10px;
 }
-
-  .checkInDD img{
-    width: 40px;
-    height: 40px;
-    top: 20%;
-    right: 3%;
-    position: absolute;
-  }
 
 .checkOut{
   background-color: white;
@@ -302,70 +284,35 @@ body{
   border-radius: 10px;
 }
 
-#searchTitle !important{
-  position: absolute;
-  top: 33%;
-  left: 7%;
-  color: white;
-  font-family: 'Roboto', sans-serif;
-  font-size: 25px;
-  text-align: center;
-  text-transform: uppercase;
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
 }
 
-.dropbtn {
-  background-color: white;
-  color: #c8c8c8;
-  padding: 25px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  width: 27%;
-  position: absolute;
-  top: 9%;
-  left: 5.5%;
-  margin: 0 3%;
+.overlayContent{
+    width: 80vw;
+    max-height: 70vh;
+    height: 70vh;
+    background-color: white;
+    padding: 10px;
+    position: relative;
 }
 
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #3e8e41;
-}
-
-#myInput {
-  box-sizing: border-box;
-  background-image: url('searchicon.png');
-  background-position: 14px 12px;
-  background-repeat: no-repeat;
-  font-size: 16px;
-  padding: 14px 20px 12px 45px;
-  border: none;
-  border-bottom: 1px solid #ddd;
-}
-
-#myInput:focus {outline: 3px solid #ddd;}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
+.card-body {
   display: none;
+}
+
+#card img{
+  width: 40px;
+  height: 40px;
+  top: 20%;
+  right: 3%;
   position: absolute;
-  background-color: #f6f6f6;
-  min-width: 230px;
-  overflow: auto;
-  border: 1px solid #ddd;
-  z-index: 1;
 }
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown a:hover {background-color: #ddd;}
-
-.show {display: block;}
