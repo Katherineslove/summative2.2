@@ -5,7 +5,7 @@
 }
 
 body, html{
-  overflow: hidden
+  overflow: hidden;
 }
 
 body{
@@ -229,30 +229,148 @@ body{
   width: 94.5%;
   height: 18%;
   position: relative;
-  bottom: 5%;
+  bottom: 7%;
   left: 2.5%;
   border: 1px solid #808080;
   border-radius: 10px;
 }
+
+    .overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .overlayContent{
+        width: 80%;
+        background-color: black;
+        padding: 10px;
+        position: relative;
+        z-index: 2;
+        left: 11.5%
+    }
+
+    #card {
+      position: relative;
+      width: 100%;
+      bottom: 218%;
+      left: -1%;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .card-body {
+      display: none;
+    }
+
+    #card img{
+      width: 40px;
+      height: 40px;
+      top: 50%;
+      left: 85.6%;
+      position: fixed;
+    }
 
 .checkOut{
   background-color: white;
   width: 94.5%;
   height: 18%;
   position: relative;
-  top: 5%;
+  top: 2%;
   left: 2.5%;
   border: 1px solid #808080;
   border-radius: 10px;
-}
+  }
 
-    .checkOutDD img{
+    .cOoverlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cOoverlayContent{
+        width: 80%;
+        background-color: black;
+        padding: 10px;
+        position: relative;
+        z-index: 2;
+        left: 11.5%
+    }
+
+    #CheckOutcard {
+      position: absolute;
+      width: 100%;
+      bottom: -190%;
+      left: -1%;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .CheckOutcard-body {
+      display: none;
+    }
+
+    #CheckOutcard img{
       width: 40px;
       height: 40px;
-      top: 20%;
-      right: 3%;
-      position: absolute;
+      top: 60%;
+      left: 85.6%;
+      position: fixed;
     }
+
+.guestsOverlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+
+.guestsOverlayContent{
+    width: 80%;
+    background-color: black;
+    padding: 10px;
+    position: relative;
+    z-index: 2;
+    left: 11.5%
+}
+
+#guestsCard {
+  position: absolute;
+  width: 100%;
+  bottom: -190%;
+  left: -1%;
+  text-align: center;
+  justify-content: center;
+}
+
+.guestsCard-body {
+  display: none;
+}
+
+#guestsCard img{
+  width: 40px;
+  height: 40px;
+  top: 60%;
+  left: 85.6%;
+  position: fixed;
+}
+
+
+
 
 .travellers{
   background-color: white;
@@ -276,42 +394,76 @@ body{
 .search{
   background-color: #808080;
   width: 35%;
-  height: 18%;
+  height: 68%;
   position: relative;
-  top: 25%;
+  top: 300%;
   left: 31%;
   border: 1px solid #808080;
   border-radius: 10px;
 }
 
-.overlay{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
+.month {
+  padding: 60px 25px;
+  width: 100%;
+  background: #576574;
+  text-align: center;
 }
 
-.overlayContent{
-    width: 80vw;
-    max-height: 70vh;
-    height: 70vh;
-    background-color: red;
-    padding: 10px;
-    position: relative;
+.month ul {
+  margin: 0;
+  padding: 0;
 }
 
-.card-body {
-  display: none;
+.month ul li {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
-#card img{
-  width: 40px;
-  height: 40px;
-  top: 20%;
-  left: 93.3%;
-  position: absolute;
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+
+.weekdays {
+  width: 100%;
+  margin: 0;
+  padding: 10px 0;
+  background-color: #ddd;
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: #666;
+  text-align: center;
+}
+
+.days {
+  width: 100%;
+  padding: 10px 0;
+  background: #eee;
+  margin: 0;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13.6%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size:12px;
+  color: #777;
+}
+
+.days li .active {
+  padding: 5px;
+  background: #576574;
+  color: white !important
 }

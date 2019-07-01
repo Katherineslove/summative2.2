@@ -58,16 +58,27 @@ $(document).ready(function(){
 
 
     var input = document.getElementById('autoComplete');
-    var autoComplete = new google.maps.places.Autocomplete(input);
+    var autoComplete = new google.maps.places.Autocomplete(input, options);
     autoComplete.addListener('place_changed', function(){
       console.log('the place has been changed');
       var place = autoComplete.getPlace();
       console.log(place);
     });
 
+    var options = {
+      types: ['(cities)'],
+      componentRestrictions: {country: 'nz'}
+    };
+
     $("#card").click(function(){
 
-    $(".card-body").toggle();
+        $(".card-body").toggle();
+
+    });
+
+    $("#CheckOutcard").click(function(){
+      console.log('working');
+          $(".CheckOutcard-body").toggle();
 
     });
 
