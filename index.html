@@ -15,7 +15,7 @@
     <div class="getStart started">
       <div class="getStartContent startedContent">
         <img id="logo" class="image100" src="images/logo.png" alt="">
-        <button id="start" class="btn upper hideen">Book your next adventure</button>
+        <button id="start" class="btn upper">Book your next adventure</button>
       </div>
     </div>
 
@@ -108,7 +108,6 @@
              <img src="images/calendar.png" id="sectionsIcons" alt="">
               <label for="start" class="enlarge"><h1>Check Out:</h1></label>
             <div class="checkOutDD">
-
               <div id="CheckOutcard" onclickp="CheckOutcardpopUp">
                 <img src="images/dropDown.png" class="card-img-top  cOoverlay" alt="icon">
                   <div class="CheckOutcard-body cOoverlayContent">
@@ -175,18 +174,25 @@
            <img src="images/travellers.png" id="sectionsIcons" alt="">
             <label for="start" class="enlarge"><h1>Guests:</h1></label>
             <div class="travellersDD">
-              <img src="images/dropDown.png" alt="icon">
-              <div id="guestsCard" onclickp="guestsCardpopUp">
+              <div id="guestsCard" onclick="guestsCardpopUp()">
                 <img src="images/dropDown.png" class="card-img-top  guestsOverlay" alt="icon">
                   <div class="guestsCard-body guestsOverlayContent">
-
-              </div>
+                    <div id="input_div">
+                      <input type="text" size="25" value="1" id="count">
+                      <input type="button" value="-" id="moins" onclick="minus()">
+                      <input type="button" value="+" id="plus" onclick="plus()">
+                    </div>
+                </div>
             </div>
           </div>
 
-          <div class="search">
+          <div class="search" onclick="search()">
             <h1 id="searchTitle">SEARCH</h1>
           </div>
+
+        </div>
+
+        <div id="results" class="showResults hidden"
 
         </div>
 
@@ -200,11 +206,11 @@
 
 
 
-    </div>
+</div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoYVCJg4zrXWBsfeMZ4A_XJ_nwntysdDQ&libraries=places" type="text/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoYVCJg4zrXWBsfeMZ4A_XJ_nwntysdDQ&libraries=places"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
   </body>
