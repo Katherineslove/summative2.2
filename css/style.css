@@ -457,6 +457,15 @@ body{
   border: 1px solid #808080;
 }
 
+#details {
+  height: 66vh;
+  width: 88.2vw;
+  background-color: red;
+  position: relative;
+  bottom: 25%;
+  right: 140%;
+}
+
 #option1 {
   left: 5.9%;
   width: 88.2%;
