@@ -399,7 +399,11 @@ body{
   background-color: #808080;
   width: 35%;
   height: 68%;
+<<<<<<< HEAD
   position: absolute;
+=======
+  position: relative;
+>>>>>>> d77f0fea1cc6c14ca04bc04c9da252a0eed5f1f6
   top: 130%;
   left: 31%;
   border: 1px solid #808080;
