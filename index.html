@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto|Titillium+Web&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title></title>
+    <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -33,174 +34,84 @@
 
         <div id="sections">
 
-          <div id="location">
-            <img src="images/location.png" id="sectionsIcons" alt="icon">
-              <input type="text" name="location" id="autoComplete" placeholder="eg. Wellington">
-          </div>
-
-          <div class="checkIn">
-            <img src="images/calendar.png" id="sectionsIcons" alt="">
-            <label for="start" class="enlarge"><h1>Check In:</h1></label>
-
-            <div id="card" onclick"popUp">
-              <img src="images/dropDown.png" class="card-img-top  overlay" alt="icon">
-                <div class="card-body overlayContent">
-                  <div class="month">
-                      <ul>
-                        <li class="prev">&#10094;</li>
-                        <li class="next">&#10095;</li>
-                        <li>
-                          July<br>
-                          <span style="font-size:18px">2019</span>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <ul class="weekdays">
-                      <li>Mo</li>
-                      <li>Tu</li>
-                      <li>We</li>
-                      <li>Th</li>
-                      <li>Fr</li>
-                      <li>Sa</li>
-                      <li>Su</li>
-                    </ul>
-
-                    <ul class="days">
-                      <li><span class="active">1</span></li>
-                      <li>2</li>
-                      <li>3</li>
-                      <li>4</li>
-                      <li>5</li>
-                      <li>6</li>
-                      <li>7</li>
-                      <li>8</li>
-                      <li>9</li>
-                      <li>10</li>
-                      <li>11</li>
-                      <li>12</li>
-                      <li>13</li>
-                      <li>14</li>
-                      <li>15</li>
-                      <li>16</li>
-                      <li>17</li>
-                      <li>18</li>
-                      <li>19</li>
-                      <li>20</li>
-                      <li>21</li>
-                      <li>22</li>
-                      <li>23</li>
-                      <li>24</li>
-                      <li>25</li>
-                      <li>26</li>
-                      <li>27</li>
-                      <li>28</li>
-                      <li>29</li>
-                      <li>30</li>
-                      <li>31</li>
-                    </ul>
-                </div>
-            </div>
-
-          </div>
-
-          <div class="checkOut">
-             <img src="images/calendar.png" id="sectionsIcons" alt="">
-              <label for="start" class="enlarge"><h1>Check Out:</h1></label>
-            <div class="checkOutDD">
-              <div id="CheckOutcard" onclickp="CheckOutcardpopUp">
-                <img src="images/dropDown.png" class="card-img-top  cOoverlay" alt="icon">
-                  <div class="CheckOutcard-body cOoverlayContent">
-                    <div class="month">
-                        <ul>
-                          <li class="prev">&#10094;</li>
-                          <li class="next">&#10095;</li>
-                          <li>
-                            July<br>
-                            <span style="font-size:18px">2019</span>
-                          </li>
-                        </ul>
-                      </div>
-
-                      <ul class="weekdays">
-                        <li>Mo</li>
-                        <li>Tu</li>
-                        <li>We</li>
-                        <li>Th</li>
-                        <li>Fr</li>
-                        <li>Sa</li>
-                        <li>Su</li>
-                      </ul>
-
-                      <ul class="days">
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li><span class="active">4</span></li>
-                        <li>5</li>
-                        <li>6</li>
-                        <li>7</li>
-                        <li>8</li>
-                        <li>9</li>
-                        <li>10</li>
-                        <li>11</li>
-                        <li>12</li>
-                        <li>13</li>
-                        <li>14</li>
-                        <li>15</li>
-                        <li>16</li>
-                        <li>17</li>
-                        <li>18</li>
-                        <li>19</li>
-                        <li>20</li>
-                        <li>21</li>
-                        <li>22</li>
-                        <li>23</li>
-                        <li>24</li>
-                        <li>25</li>
-                        <li>26</li>
-                        <li>27</li>
-                        <li>28</li>
-                        <li>29</li>
-                        <li>30</li>
-                        <li>31</li>
-                      </ul>
-                  </div>
+              <div id="location">
+                <img src="images/location.png" id="sectionsIcons" alt="icon">
+                  <input type="text" name="location" id="autoComplete" placeholder="eg. Wellington">
               </div>
-            </div>
-          </div>
+
+              <div class="checkIn">
+                <img src="images/calendar.png" id="sectionsIcons" alt="">
+
+                <div id="card">
+                <label for="start" class="enlarge"><h1>Check In:</h1></label>
+                      <input type="text" id="datepicker">
+                </div>
+
+              </div>
+
+              <div class="checkOut">
+                 <img src="images/calendar.png" id="sectionsIcons" alt="">
+
+                <div id="CheckOutcard">
+                    <label for="start" class="enlarge"><h1>Check Out:</h1></label>
+                      <input type="text" id="datepicker">
+                </div>
+              </div>
 
           <div class="travellers">
-           <img src="images/travellers.png" id="sectionsIcons" alt="">
-            <label for="start" class="enlarge"><h1>Guests:</h1></label>
-            <div class="travellersDD">
-              <div id="guestsCard" onclick="guestsCardpopUp()">
-                <img src="images/dropDown.png" class="card-img-top  guestsOverlay" alt="icon">
-                  <div class="guestsCard-body guestsOverlayContent">
-                    <div id="input_div">
-                      <input type="text" size="25" value="1" id="count">
-                      <input type="button" value="-" id="moins" onclick="minus()">
-                      <input type="button" value="+" id="plus" onclick="plus()">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+
+                        <img src="images/travellers.png" id="sectionsIcons" alt=""><h1>Guests:</h1>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-lg-right">
+                      <button class="dropdown-item" type="button">1</button>
+                      <button class="dropdown-item" type="button">2</button>
+                      <button class="dropdown-item" type="button">3</button>
+                      <button class="dropdown-item" type="button">4</button>
                     </div>
-                </div>
+                  </div>
             </div>
-          </div>
-
-
-        </div>
         </div>
 
         <div class="search">
           <h1 id="searchTitle">SEARCH</h1>
         </div>
 
-        <div id="results" class="showResults hidden"
+      <div id="results" class="hidden">
+        <img src="images/back.png" id="sectionsIcons" class="back">
+      </div>
 
+      <div id="places" class="hidden">
+
+        <div id="option1">
+          <div class="photos">
+            <img id="myImg" src="" alt="Snow" style="width:100%;max-width:300px">
+            <div id="myModal" class="modal">
+              <span class="close">&times;</span>
+              <img class="modal-content" id="img01">
+              <div id="caption"></div>
+            </div>
+          </div>
         </div>
 
+        <div id="option2">
+          <div class="photos">
 
+          </div>
+        </div>
 
-      <div id="results" class="showResults hidden">
+        <div id="option3">
+          <div class="photos">
+
+          </div>
+        </div>
+
+        <div id="option4">
+          <div class="photos">
+
+          </div>
+        </div>
 
       </div>
 
@@ -217,6 +128,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrNCqnem6SPV87biSX5ZohCU8Vx6O-hfs&libraries=places"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

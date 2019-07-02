@@ -83,6 +83,14 @@ body{
   outline: none;
 }
 
+.btn-group {
+  width: 100%;
+  height: 105%;
+  left: 0%;
+  top: -2px;
+  position: absolute;
+}
+
 .upper{
   text-transform: uppercase;
 }
@@ -242,45 +250,27 @@ body{
   border-radius: 10px;
 }
 
-    .overlay{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        /* display: flex; */
-        justify-content: center;
-        align-items: center;
-    }
-
-    .overlayContent{
-        width: 80%;
-        background-color: black;
-        padding: 10px;
-        position: relative;
-        z-index: 2;
-        left: 11.5%
-    }
-
     #card {
       position: relative;
       width: 100%;
-      bottom: 218%;
-      left: -1%;
+      top: -24%;
+      left: 0;
       text-align: center;
       justify-content: center;
     }
 
-    .card-body {
-      display: none;
+    #card h1 {
+      left: 3%;
+      top: 140%;
     }
 
-    #card img{
-      width: 40px;
-      height: 40px;
-      top: 50%;
-      left: 85.6%;
-      position: fixed;
+    #card input {
+      border: none;
+      width: 84%;
+      left: 16%;
+      top: 69%;
+      height: 254%;
+      position: absolute;
     }
 
 .checkOut{
@@ -292,89 +282,30 @@ body{
   left: 2.5%;
   border: 1px solid #808080;
   border-radius: 10px;
-  }
-
-    .cOoverlay{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        /* display: flex; */
-        justify-content: center;
-        align-items: center;
-    }
-
-    .cOoverlayContent{
-        width: 80%;
-        background-color: black;
-        padding: 10px;
-        position: relative;
-        z-index: 2;
-        left: 11.5%
-    }
+}
 
     #CheckOutcard {
       position: absolute;
+      position: absolute;
       width: 100%;
-      bottom: -190%;
-      left: -1%;
+      bottom: 62%;
       text-align: center;
       justify-content: center;
     }
 
-    .CheckOutcard-body {
-      display: none;
+    #CheckOutcard h1 {
+      left: 3%;
+      top: 80%;
     }
 
-    #CheckOutcard img{
-      width: 40px;
-      height: 40px;
-      top: 64%;
-      left: 85.6%;
-      position: fixed;
+    #CheckOutcard input {
+      border: none;
+      width: 84%;
+      left: 16%;
+      top: 4%;
+      height: 254%;
+      position: absolute;
     }
-
-.guestsOverlay{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
-}
-
-.guestsOverlayContent{
-    width: 80%;
-    background-color: black;
-    padding: 10px;
-    position: relative;
-    z-index: 2;
-    left: 11.5%
-}
-
-#guestsCard {
-  position: absolute;
-  width: 100%;
-  bottom: -190%;
-  left: -1%;
-  text-align: center;
-  justify-content: center;
-}
-
-.guestsCard-body {
-  display: none;
-}
-
-#guestsCard img{
-  width: 40px;
-  height: 40px;
-  top: 77.5%;
-  left: 85.6%;
-  position: fixed;
-}
 
 .travellers{
   background-color: white;
@@ -387,27 +318,26 @@ body{
   border-radius: 10px;
   }
 
-    .travellersDD img {
-      width: 40px;
-      height: 40px;
-      top: 20%;
-      right: 3%;
-      position: absolute;
-    }
-
 .search{
   background-color: #808080;
   width: 35%;
-  height: 68%;
-<<<<<<< HEAD
+  height: 8%;
   position: absolute;
-=======
-  position: relative;
->>>>>>> d77f0fea1cc6c14ca04bc04c9da252a0eed5f1f6
-  top: 130%;
+  top: 83%;
   left: 31%;
   border: 1px solid #808080;
   border-radius: 10px;
+}
+
+.search h1 {
+  position: absolute;
+  top: 25%;
+  left: 34%;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 31px;
+  text-align: center;
+  margin: 0 5%;
 }
 
 .month {
@@ -484,6 +414,139 @@ body{
   height: 13%;
   z-index: 100;
   left: 1%;
-  top: 1%;
+  top: 2%;
   position: relative;
+  border: 2px solid #808080;
+}
+
+#results img {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 1%;
+}
+
+#option1 {
+  left: 5.9%;
+  width: 88.2%;
+  height: 17%;
+  background-color: yellow;
+  position: absolute;
+  top: 18%;
+  border: 2px solid #808080;
+}
+
+#option2 {
+  left: 5.9%;
+  width: 88.2%;
+  height: 17%;
+  background-color: orange;
+  position: absolute;
+  top: 39%;
+  border: 2px solid #808080;
+}
+
+#option3 {
+  left: 5.9%;
+  width: 88.2%;
+  height: 17%;
+  background-color: green;
+  position: absolute;
+  top: 60%;
+  border: 2px solid #808080;
+}
+
+#option4 {
+  left: 5.9%;
+  width: 88.2%;
+  height: 17%;
+  background-color: blue;
+  position: absolute;
+  top: 81%;
+  border: 2px solid #808080;
+}
+
+.photos {
+  width: 30%;
+  height: 100%;
+  left: 0%;
+  background-color: white;
+  border-right: 2px solid #808080;
+}
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)}
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
 }
