@@ -13,14 +13,14 @@
 
   <div id="pageContainer">
 
-    <div class="getStart started">
-      <div class="getStartContent startedContent">
+    <div class="getStart ">
+      <div class="getStartContent ">
         <img id="logo" class="image100" src="images/logo.png" alt="">
         <button id="start" class="btn upper">Book your next adventure</button>
       </div>
     </div>
 
-    <div id="contentContainer" class="">
+    <div id="contentContainer" class="contentContainerStart">
       <div id="content">
         <div id="options">
           <button id="hotel" class="hotel"><h1>Hotel</h1></button>
@@ -54,14 +54,13 @@
 
                 <div id="CheckOutcard">
                     <label for="start" class="enlarge"><h1>Check Out:</h1></label>
-                      <input type="text" id="datepicker">
+                      <input type="text" id="datepicker2">
                 </div>
               </div>
 
           <div class="travellers">
                   <div class="btn-group">
                     <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-
                         <img src="images/travellers.png" id="sectionsIcons" alt=""><h1>Guests:</h1>
                     </button>
                     <div class="dropdown-menu dropdown-menu-lg-right">
@@ -78,49 +77,48 @@
           <h1 id="searchTitle">SEARCH</h1>
         </div>
 
-      <div id="results" class="hidden">
-        <img src="images/back.png" id="sectionsIcons" class="back">
-      </div>
-
-      <div id="places" class="hidden">
-
-        <div id="option1">
-          <div class="photos">
-            <img id="myImg" src="" alt="Snow" style="width:100%;max-width:300px">
-            <div id="myModal" class="modal">
-              <span class="close">&times;</span>
-              <img class="modal-content" id="img01">
-              <div id="caption"></div>
+        <div id="results" class="hidden">
+            <img src="images/icons8-back-50.png" id="sectionsIcons" class="back">
+            <div class="header">
+              <!--  -->
             </div>
-          </div>
         </div>
 
-        <div id="option2">
-          <div class="photos">
-
-          </div>
+        <div id="filter" class="hidden">
+          <p class="text">sort & filter</p>
         </div>
 
-        <div id="option3">
-          <div class="photos">
-
-          </div>
+        <div id="map" class="hidden">
+          <p class="text">map</p>
         </div>
 
-        <div id="option4">
-          <div class="photos">
+        <div id="places" class="hidden">
+            <div id="option1">
+              <div class="photos">
+                <img id="myImg" src="images/airportGardenInn.png" alt="Airport Garden Inn, Auckland" style="width:100%; height: 100%;">
+                <div id="myModal" class="modal">
+                  <span class="close">&times;</span>
+                  <img class="modal-content" id="img01">
+                  <div id="caption"></div>
+                </div>
+              </div>
+            </div>
 
-          </div>
+            <div id="option2">
+              <div class="photos">
+                <img id="myImg" src="images/studio.png" alt="Airport Garden Inn, Auckland" style="width:100%; height: 100%;">
+
+              </div>
+            </div>
+
+            <div id="option3">
+              <div class="photos">
+                <img id="myImg" src="images/waldorfStadiumApartments.png" alt="Airport Garden Inn, Auckland" style="width:100%; height: 100%;">
+              </div>
+            </div>
         </div>
-
-      </div>
-
     </div>
-
   </div>
-
-
-
 
 </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

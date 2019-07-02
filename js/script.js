@@ -161,17 +161,27 @@ $(document).ready(function(){
     });
 
     $(".search").click(function(){
+      $('input').each(function() {
+          if(!$(this).val()){
+              alert('Some fields are empty');
+             return false;
+          }
+      });
       $('#options').fadeOut(1000);
       $('#sections').fadeOut(1000);
       $('.search').fadeOut(1000);
       $('#results').fadeIn(1000);
       $('#places').fadeIn(1000);
+      $('#filter').fadeIn(300);
+      $('#map').fadeIn(300);
     });
 
     $("#results").click(function(){
       $('#options').fadeIn(300);
       $('#sections').fadeIn(300);
       $('.search').fadeIn(300);
+      $('#filter').fadeOut(300);
+      $('#map').fadeOut(300);
       $('#results').fadeOut(300);
       $('#places').fadeOut(300);
     });
@@ -206,5 +216,9 @@ $( function() {
     $( "#datepicker" ).datepicker();
   } );
 
+
+  $( function() {
+      $( "#datepicker2" ).datepicker();
+    } );
 
 google.maps.event.addDomListener(window, 'load');

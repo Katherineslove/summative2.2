@@ -261,15 +261,15 @@ body{
 
     #card h1 {
       left: 3%;
-      top: 140%;
+      top: 120%;
     }
 
     #card input {
       border: none;
-      width: 84%;
-      left: 16%;
+      width: 74%;
+      left: 25%;
       top: 69%;
-      height: 254%;
+      height: 200%;
       position: absolute;
     }
 
@@ -300,10 +300,10 @@ body{
 
     #CheckOutcard input {
       border: none;
-      width: 84%;
-      left: 16%;
-      top: 4%;
-      height: 254%;
+      width: 74%;
+      left: 25%;
+      top: 30%;
+      height: 200%;
       position: absolute;
     }
 
@@ -407,7 +407,7 @@ body{
 }
 
 #results {
-  background-color: red;
+  background-color: #808080;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   width: 98%;
@@ -426,44 +426,65 @@ body{
   left: 1%;
 }
 
+#filter{
+  width: 56%;
+  height: 7%;
+  background-color: white;
+  position: relative;
+  top: 4%;
+  left: 1%;
+  color: #c8c8c8;
+  border: 1px solid #808080;
+}
+
+.text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 23px;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  top: 18%;
+}
+
+#map {
+  width: 41%;
+  height: 7%;
+  left: 58%;
+  bottom: 3%;
+  background-color: white;
+  position: relative;
+  color: #c8c8c8;
+  border: 1px solid #808080;
+}
+
 #option1 {
   left: 5.9%;
   width: 88.2%;
-  height: 17%;
-  background-color: yellow;
+  height: 22%;
+  background-color: white;
   position: absolute;
-  top: 18%;
-  border: 2px solid #808080;
+  top: 26%;
+  border: 1px solid #808080;
 }
 
 #option2 {
   left: 5.9%;
   width: 88.2%;
-  height: 17%;
-  background-color: orange;
+  height: 22%;
+  background-color: white;
   position: absolute;
-  top: 39%;
-  border: 2px solid #808080;
+  top: 51%;
+  border: 1px solid #808080;
 }
 
 #option3 {
   left: 5.9%;
   width: 88.2%;
-  height: 17%;
-  background-color: green;
+  height: 22%;
+  background-color: white;
   position: absolute;
-  top: 60%;
-  border: 2px solid #808080;
-}
-
-#option4 {
-  left: 5.9%;
-  width: 88.2%;
-  height: 17%;
-  background-color: blue;
-  position: absolute;
-  top: 81%;
-  border: 2px solid #808080;
+  top: 76%;
+  border: 1px solid #808080;
 }
 
 .photos {
