@@ -37,12 +37,19 @@ body{
   height: 20vh;
 }
 
+.results {
+  margin: 0 auto;
+  width: 900px;
+  max-width: 90vw;
+  transition: 1s;
+  background-color: red;
+}
+
 .getStartContent{
   margin: 0 auto;
   width: 900px;
   max-width: 90vw;
   transition: 1s;
-
 }
 
 .startedContent{
@@ -323,7 +330,7 @@ body{
     #CheckOutcard img{
       width: 40px;
       height: 40px;
-      top: 60%;
+      top: 64%;
       left: 85.6%;
       position: fixed;
     }
@@ -364,20 +371,17 @@ body{
 #guestsCard img{
   width: 40px;
   height: 40px;
-  top: 60%;
+  top: 77.5%;
   left: 85.6%;
   position: fixed;
 }
-
-
-
 
 .travellers{
   background-color: white;
   width: 94.5%;
   height: 18%;
   position: relative;
-  top: 15%;
+  top: 11%;
   left: 2.5%;
   border: 1px solid #808080;
   border-radius: 10px;
@@ -395,8 +399,8 @@ body{
   background-color: #808080;
   width: 35%;
   height: 68%;
-  position: relative;
-  top: 300%;
+  position: absolute;
+  top: 130%;
   left: 31%;
   border: 1px solid #808080;
   border-radius: 10px;
@@ -466,4 +470,16 @@ body{
   padding: 5px;
   background: #576574;
   color: white !important
+}
+
+#results {
+  background-color: red;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  width: 98%;
+  height: 13%;
+  z-index: 100;
+  left: 1%;
+  top: 1%;
+  position: relative;
 }

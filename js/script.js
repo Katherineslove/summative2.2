@@ -8,9 +8,14 @@ $(document).ready(function(){
       $('.getStart').addClass('started');
       $('.getStartContent').addClass('startedContent');
       $('#contentContainer').removeClass('contentContainerStart');
+      $('#contentContainer').removeClass('showResults');
+      $('.checkIn').removeClass('card-img-top');
+      $('.checkOut').removeClass('card-img-top');
+      $('.travellers').removeClass('card-img-top guestsOverlay');
       setTimeout(function(){
         started = true;
       }, 1000)
+
     }
   })
 
@@ -26,6 +31,7 @@ $(document).ready(function(){
     }
   })
  //-----------------------------------------
+
   $('#hotel').click(function(){
       $('.hotel').css("background", "black");
       $('.motel').css("background", "#808080");
@@ -76,11 +82,32 @@ $(document).ready(function(){
 
     });
 
-    $("#CheckOutcard").click(function(){
-      console.log('working');
-          $(".CheckOutcard-body").toggle();
+    $("#guestsCard").click(function guestsCardpopUp(){
+
+        $(".guestsCard-body").toggle();
+
+        var count = 1;
+        var countEl = document.getElementById("count");
+        function plus(){
+            count++;
+            countEl.value = count;
+        }
+        function minus(){
+          if (count > 1) {
+            count--;
+            countEl.value = count;
+          }
+        }
 
     });
+
+    $(".search").click(function(){
+      $('#options').fadeOut(1000);
+      $('#sections').fadeOut(1000);
+      $('#results').fadeIn(1000);
+    });
+
+
 
 });
 
