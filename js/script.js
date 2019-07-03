@@ -476,10 +476,7 @@ $(document).ready(function(){
       $('#options').fadeOut(1000);
       $('#sections').fadeOut(1000);
       $('.search').fadeOut(1000);
-      $('#results').fadeIn(1000);
-      $('#places').fadeIn(1000);
-      $('#filter').fadeIn(300);
-      $('#map').fadeIn(300);
+      $('#results').removeClass('hidden');
     });
 
 
