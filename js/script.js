@@ -357,7 +357,6 @@ function initMap(){
 
 }
 
-
 $(document).ready(function(){
 
   var started = false;
@@ -509,32 +508,27 @@ $( function() {
     $( "#datepicker" ).datepicker();
   } );
 
-  $( function() {
-      $( "#datepicker2" ).datepicker();
-    } );
+$( function() {
+    $( "#datepicker2" ).datepicker();
+  } );
 
-    $(".back").click(function(){
-      $('#options').fadeIn(300);
-      $('#sections').fadeIn(300);
-      $('.search').fadeIn(300);
-      $('#filter').fadeOut(300);
-      $('#map').fadeOut(300);
-      $('#results').fadeOut(300);
-      $('#places').fadeOut(300);
-      $('#details').hidden;
-    });
+$(".back").click(function(){
+  $('#options').fadeIn(300);
+  $('#sections').fadeIn(300);
+  $('.search').fadeIn(300);
+  $('#filter').fadeOut(300);
+  $('#map').fadeOut(300);
+  $('#results').fadeOut(300);
+  $('#places').fadeOut(300);
+  $('#details').hidden;
+});
 
-    $("#map").click(function(){
-      $('#filter').fadeOut(300);
-      $('#places').fadeOut(300);
-      console.log('working');
-      $('#details').fadeIn(300);
-    });
-
-//     function myFunction() {
-//   var a = document.getElementById("btn1").value;
-//   document.getElementById("demo").innerHTML = a
-// }
+$("#map").click(function(){
+  $('#filter').fadeOut(300);
+  $('#places').fadeOut(300);
+  console.log('working');
+  $('#details').fadeIn(300);
+});
 
 function oneGuest() {
   var a = document.getElementById("btn1").value;
@@ -556,5 +550,67 @@ function fourGuests() {
   document.getElementById("guestsTitle").innerHTML = d;
 }
 
+var maxNumberOnScreen = 3;
+var currentTab = 'accommodationOptions';
+var pageContainer = document.getElementById('pageContainer');
+
+
+function showMovies(){
+  pageContainer.innerHTML = '<div id="moviesList" class="row"></div>';
+  pageContainer.innerHTML += '<div class="row"><div class="col"><nav><ul id="paginationMovies" class="pagination justify-content-end"></ul></nav></div></div>';
+  var numberOfPages = Math.ceil(accommodationOptions.type / maxNumberOnScreen);
+  if(numberOfPages > 1){
+      var pagination = document.getElementById('paginationAccommodation');
+      for (var i = 0; i < numberOfPages; i++) {
+          pagination.innerHTML += '<li class="page-item"><a class="page-link" onclick="clickOnPageination('+(i+1)+');" href="#">'+(i+1)+'</a></li>';
+      }
+  }
+
+  if(maxNumberOnScreen > accommodationOptions.length){
+      showMovieThumbnails(0, accommodationOptions.length);
+  } else {
+      showMovieThumbnails(0, maxNumberOnScreen);
+  }
+
+}
+
+showMovies();
+
+function clickOnPagination(num){
+    console.log('page clicked on ' + num);
+    var max = num * maxNumberOnScreen;
+    var min = max - maxNumberOnScreen;
+
+    if(max > accommodationOptions.length){
+        max = accommodationOptions.length;
+    }
+    showMovieThumbnails(min, max);
+}
+
+function showMovieThumbnails(start, end){
+  document.getElementById('moviesList').innerHTML = null;
+  for (var i = start; i < end; i++) {
+        var movie = accommodationOptions[i];
+
+          var movieCard = '<div class="col-12 col-sm-6 col-md-3 mb-3 text-center">';
+            movieCard += '<div class="movieThumb movieThumb2 card h-100" data-id="'+accommodationOptions.id+'">';
+                movieCard += '<img src="images/posters/'+movie.image+'" class="card-img-top" alt="">';
+                movieCard += '<div class="card-body">';
+                    movieCard += '<h5 class="card-title">'+accommodationOptions.title+'</h5>';
+                movieCard += '</div>';
+            movieCard += '</div>';
+        movieCard += '</div>';
+
+        document.getElementById('moviesList').innerHTML += movieCard;
+    }
+
+    var movieThumbnails = document.getElementsByClassName('movieThumb2');
+    for (var i = 0; i < movieThumbnails.length; i++) {
+        movieThumbnails[i].onclick = function(){
+            var id = parseInt(this.dataset.id);
+            showMoreMovie(id);
+        };
+    }
+}
 
 google.maps.event.addDomListener(window, 'load', initMap);

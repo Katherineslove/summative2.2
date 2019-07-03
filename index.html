@@ -6,21 +6,22 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto|Titillium+Web&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title></title>
+    <link href="css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
 
-  <div id="pageContainer">
+  <div id="pageContents">
 
-    <div class="getStart">
-      <div class="getStartContent">
+    <div class="getStart started">
+      <div class="getStartContent startedContent">
         <img id="logo" class="image100" src="images/logo.png" alt="">
         <button id="start" class="btn upper">Book your next adventure</button>
       </div>
     </div>
 
-    <div id="contentContainer" class="contentContainerStart">
+    <div id="contentContainer" class="">
       <div id="content">
         <div id="options">
           <button id="hotel" class="hotel"><h1>Hotel</h1></button>
@@ -104,28 +105,38 @@
         </div>
 
         <div id="places" class="hidden">
-            <div id="option1">
-              <div class="photos">
-                <img id="myImg" src="images/airportGardenInn.png" alt="Airport Garden Inn, Auckland" style="width:100%; height: 100%;">
+            <!-- <div id="option1">
+              <div class="photos"> -->
+                <!-- <img id="myImg" src="images/airportGardenInn.png" alt="Airport Garden Inn, Auckland" style="width:100%; height: 100%;">
                 <div id="myModal" class="modal">
                   <span class="close">&times;</span>
                   <img class="modal-content" id="img01">
                   <div id="caption"></div>
+                </div> -->
+              <!-- </div>
+            </div> -->
+
+            <!-- <div id="option2">
+              <div class="photos">
+                <img id="myImg" src="" alt="" style="width:100%; height: 100%;">
+              </div>
+            </div> -->
+
+            <!-- <div id="option3">
+              <div class="photos">
+                <!-- <img id="myImg" src="images/waldorfStadiumApartments.png" alt="Airport Garden Inn, Auckland" style="width:100%; height: 100%;"> -->
+              <!-- </div>
+            </div> -->
+
+            <div id="pageContainer">
+                <div id="moviesList " class="row"></div>
+                <div class="row">
+                    <div class="col">
+                        <nav>
+                            <ul id="paginationAccommodation" class="pagination justify-content-end"></ul>
+                        </nav>
+                    </div>
                 </div>
-              </div>
-            </div>
-
-            <div id="option2">
-              <div class="photos">
-                <img id="myImg" src="images/studio.png" alt="Airport Garden Inn, Auckland" style="width:100%; height: 100%;">
-
-              </div>
-            </div>
-
-            <div id="option3">
-              <div class="photos">
-                <img id="myImg" src="images/waldorfStadiumApartments.png" alt="Airport Garden Inn, Auckland" style="width:100%; height: 100%;">
-              </div>
             </div>
         </div>
     </div>
@@ -137,7 +148,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrNCqnem6SPV87biSX5ZohCU8Vx6O-hfs&libraries=places"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+    <script src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/jquery-ui.js"></script>
     <script src="js/script.js"></script>
   </body>
