@@ -6,6 +6,7 @@ var accommodationOptions = [
     cost: 157,
     lat: -36.846580,
     lng: 174.773410,
+    location: 'AUCKLAND',
     minNight: 1,
     maxNight: 5,
     minPeople: 1,
@@ -20,6 +21,7 @@ var accommodationOptions = [
     cost: 90,
     lat: -36.975460,
     lng: 174.816870,
+    location: 'AUCKLAND',
     minNight: 2,
     maxNight: 4,
     minPeople: 3,
@@ -34,6 +36,7 @@ var accommodationOptions = [
     cost: 30,
     lat: -37.780841,
     lng: 175.277586,
+    location: 'HAMILTON',
     minNight: 1,
     maxNight: 10,
     minPeople: 1,
@@ -48,6 +51,7 @@ var accommodationOptions = [
     cost: 240,
     lat: -41.106991,
     lng: 173.002472,
+    location: 'MOTEUKA',
     minNight: 2,
     maxNight: 15,
     minPeople: 1,
@@ -62,6 +66,7 @@ var accommodationOptions = [
     cost: 157,
     lat: -45.029461,
     lng: 168.727844,
+    location: 'QUEENSTOWN',
     minNight: 1,
     maxNight: 5,
     minPeople: 1,
@@ -76,6 +81,7 @@ var accommodationOptions = [
     cost: 30,
     lat: -43.543424,
     lng: 172.614116,
+    location: 'CHRISTCHURCH',
     minNight: 1,
     maxNight: 10,
     minPeople: 1,
@@ -478,30 +484,6 @@ $(document).ready(function(){
 
 
 
-
-var modal = document.getElementById("myModal");
-var results = document.getElementById("results");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("myImg");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-  results.style.display = "none";
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-  results.style.display = "block";
-}
-
 });
 
 $( function() {
@@ -551,67 +533,67 @@ function fourGuests() {
 }
 
 
-var maxNumberOnScreen = 3;
-var currentTab = 'accommodationOptions';
-var pageContainer = document.getElementById('pageContainer');
-
-
-function showMovies(){
-  pageContainer.innerHTML = '<div id="moviesList" class="row"></div>';
-  pageContainer.innerHTML += '<div class="row"><div class="col"><nav><ul id="paginationMovies" class="pagination justify-content-end"></ul></nav></div></div>';
-  var numberOfPages = Math.ceil(accommodationOptions.type / maxNumberOnScreen);
-  if(numberOfPages > 1){
-      var pagination = document.getElementById('paginationAccommodation');
-      for (var i = 0; i < numberOfPages; i++) {
-          pagination.innerHTML += '<li class="page-item"><a class="page-link" onclick="clickOnPageination('+(i+1)+');" href="#">'+(i+1)+'</a></li>';
-      }
-  }
-
-  if(maxNumberOnScreen > accommodationOptions.length){
-      showMovieThumbnails(0, accommodationOptions.length);
-  } else {
-      showMovieThumbnails(0, maxNumberOnScreen);
-  }
-
-}
-
-showMovies();
-
-function clickOnPagination(num){
-    console.log('page clicked on ' + num);
-    var max = num * maxNumberOnScreen;
-    var min = max - maxNumberOnScreen;
-
-    if(max > accommodationOptions.length){
-        max = accommodationOptions.length;
-    }
-    showMovieThumbnails(min, max);
-}
-
-function showMovieThumbnails(start, end){
-  document.getElementById('moviesList').innerHTML = '';
-  for (var i = start; i < end; i++) {
-        var movie = accommodationOptions[i];
-
-          var movieCard = '<div class="col-12 col-sm-6 col-md-3 mb-3 text-center">';
-            movieCard += '<div class="movieThumb movieThumb2 card h-100" data-id="'+accommodationOptions.id+'">';
-                movieCard += '<img src="images/posters/'+movie.image+'" class="card-img-top" alt="">';
-                movieCard += '<div class="card-body">';
-                    movieCard += '<h5 class="card-title">'+movie.title+'</h5>';
-                movieCard += '</div>';
-            movieCard += '</div>';
-        movieCard += '</div>';
-
-        document.getElementById('moviesList').innerHTML += movieCard;
-    }
-
-    var movieThumbnails = document.getElementsByClassName('movieThumb2');
-    for (var i = 0; i < movieThumbnails.length; i++) {
-        movieThumbnails[i].onclick = function(){
-            var id = parseInt(this.dataset.id);
-            showMoreMovie(id);
-        };
-    }
-}
+// var maxNumberOnScreen = 3;
+// var currentTab = 'accommodationOptions';
+// var pageContainer = document.getElementById('pageContainer');
+//
+//
+// function showMovies(){
+//   pageContainer.innerHTML = '<div id="moviesList" class="row"></div>';
+//   pageContainer.innerHTML += '<div class="row"><div class="col"><nav><ul id="paginationMovies" class="pagination justify-content-end"></ul></nav></div></div>';
+//   var numberOfPages = Math.ceil(accommodationOptions.type / maxNumberOnScreen);
+//   if(numberOfPages > 1){
+//       var pagination = document.getElementById('paginationAccommodation');
+//       for (var i = 0; i < numberOfPages; i++) {
+//           pagination.innerHTML += '<li class="page-item"><a class="page-link" onclick="clickOnPageination('+(i+1)+');" href="#">'+(i+1)+'</a></li>';
+//       }
+//   }
+//
+//   if(maxNumberOnScreen > accommodationOptions.length){
+//       showMovieThumbnails(0, accommodationOptions.length);
+//   } else {
+//       showMovieThumbnails(0, maxNumberOnScreen);
+//   }
+//
+// }
+//
+// showMovies();
+//
+// function clickOnPagination(num){
+//     console.log('page clicked on ' + num);
+//     var max = num * maxNumberOnScreen;
+//     var min = max - maxNumberOnScreen;
+//
+//     if(max > accommodationOptions.length){
+//         max = accommodationOptions.length;
+//     }
+//     showMovieThumbnails(min, max);
+// }
+//
+// function showMovieThumbnails(start, end){
+//   document.getElementById('moviesList').innerHTML = '';
+//   for (var i = start; i < end; i++) {
+//         var movie = accommodationOptions[i];
+//
+//           var movieCard = '<div class="col-12 col-sm-6 col-md-3 mb-3 text-center">';
+//             movieCard += '<div class="movieThumb movieThumb2 card h-100" data-id="'+accommodationOptions.id+'">';
+//                 movieCard += '<img src="images/posters/'+movie.image+'" class="card-img-top" alt="">';
+//                 movieCard += '<div class="card-body">';
+//                     movieCard += '<h5 class="card-title">'+movie.title+'</h5>';
+//                 movieCard += '</div>';
+//             movieCard += '</div>';
+//         movieCard += '</div>';
+//
+//         document.getElementById('moviesList').innerHTML += movieCard;
+//     }
+//
+//     var movieThumbnails = document.getElementsByClassName('movieThumb2');
+//     for (var i = 0; i < movieThumbnails.length; i++) {
+//         movieThumbnails[i].onclick = function(){
+//             var id = parseInt(this.dataset.id);
+//             showMoreMovie(id);
+//         };
+//     }
+// }
 
 google.maps.event.addDomListener(window, 'load', initMap);

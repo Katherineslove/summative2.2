@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Titillium+Web&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title></title>
+    <title>Summative 2</title>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="css/style.css">
@@ -14,65 +14,97 @@
 
   <div id="pageContents">
 
-    <div class="getStart">
-      <div class="getStartContent">
+    <div class="getStart started">
+      <div class="getStartContent startedContent">
         <img id="logo" class="image100" src="images/logo.png" alt="">
         <button id="start" class="btn upper">Book your next adventure</button>
       </div>
     </div>
 
-    <div id="contentContainer" class="contentContainerStart">
+    <div id="contentContainer" class="">
       <div id="content">
         <div id="options">
-          <button id="hotel" class="hotel"><h1>Hotel</h1></button>
+          <button id="hotel" class="hotel">
+            Hotel
+          </button>
 
-          <button id="motel" class="motel"><h1>Motel</h1></button>
+          <button id="motel" class="motel">
+            Motel
+          </button>
 
-          <button id="house" class="house"><h1>House</h1></button>
+          <button id="house" class="house">
+            House
+          </button>
 
-          <button id="hostel" class="hostel"><h1>Hostel</h1></button>
+          <button id="hostel" class="hostel">
+            Hostel
+          </button>
         </div>
 
         <div id="sections">
 
-              <div id="location">
-                <img src="images/location.png" id="sectionsIcons" alt="icon">
-                  <input type="text" name="location" id="autoComplete" placeholder="eg. Wellington">
+          <div id="location" class="row d-flex justify-content-center align-items-center">
+            <div class="col-1">
+              <img src="images/location.png" class="img-fluid" alt="">
+            </div>
+            <div class="col-11">
+              <div class="form-group row mb-0">
+              <label for="staticEmail" class="col-sm-2 col-form-label">Location:</label>
+              <div class="col-sm-10 d-flex align-items-center">
+                <input type="text"  class="form-control" id="autoComplete" placeholder="eg. Wellington">
               </div>
+            </div>
+            </div>
+          </div>
 
-              <div class="checkIn">
-                <img src="images/calendar.png" id="sectionsIcons" alt="">
 
-                <div id="card">
-                <label for="start" class="enlarge"><h1>Check In:</h1></label>
-                      <input type="text" id="datepicker">
+              <div class="checkIn row d-flex justify-content-center">
+                <div class="col-1">
+                  <img src="images/calendar.png" class="img-fluid" alt="">
                 </div>
-
-              </div>
-
-              <div class="checkOut">
-                 <img src="images/calendar.png" id="sectionsIcons" alt="">
-
-                <div id="CheckOutcard">
-                    <label for="start" class="enlarge"><h1>Check Out:</h1></label>
-                      <input type="text" id="datepicker2">
-                </div>
-              </div>
-
-          <div class="travellers">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-                        <img src="images/travellers.png" id="sectionsIcons" alt="">
-                        <h1>Guests:</h1>
-                        <p id="guestsTitle"></p>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-lg-right">
-                      <button id="btn1" name="subject" type="submit" value="1 Guest" onclick="oneGuest()">1</button>
-                      <button id="btn2" name="subject" type="submit" value="2 Guests" onclick="twoGuests()">2</button>
-                      <button id="btn3" name="subject" type="submit" value="3 Guests" onclick="threeGuests()">3</button>
-                      <button id="btn4" name="subject" type="submit" value="4 Guests" onclick="fourGuests()">4</button>
-                    </div>
+                <div class="col-11">
+                  <div class="form-group row mb-0">
+                  <label for="staticEmail" class="col-sm-2 col-form-label">Check In:</label>
+                  <div class="col-sm-10 d-flex align-items-center">
+                    <input type="text"  class="form-control" id="datepicker" placeholder="mm/dd/yy">
                   </div>
+                </div>
+                </div>
+              </div>
+
+              <div class="checkOut row d-flex justify-content-center">
+                <div class="col-1">
+                  <img src="images/calendar.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-11">
+                  <div class="form-group row mb-0">
+                  <label for="staticEmail" class="col-sm-2 col-form-label">Check Out:</label>
+                  <div class="col-sm-10 d-flex align-items-center">
+                    <input type="text"  class="form-control" id="datepicker2" placeholder="mm/dd/yy">
+                  </div>
+                </div>
+                </div>
+              </div>
+
+              <div class="travellers row d-flex justify-content-center">
+                <div class="col-1">
+                  <img src="images/travellers.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-11">
+                  <div class="form-group row mb-0">
+                  <label for="staticEmail" class="col-sm-2 col-form-label">Guest:</label>
+                  <div class="col-sm-10 d-flex align-items-center">
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                </div>
+                </div>
+              </div>
             </div>
         </div>
 
@@ -81,7 +113,7 @@
         </div>
 
         <div id="results" class="hidden">
-            <img src="images/icons8-back-50.png" id="sectionsIcons" class="backToStart">
+            <img src="images/icons8-back-50.png" class="sectionsIcons backToStart">
             <div class="header">
             </div>
         </div>
@@ -95,7 +127,6 @@
               <div id="placeInfo"></div>
 
               <div id="details" class="hidden">
-                  <h2></h2>
                   <p></p>
                   <ul>
                       <li id="mon"></li>
@@ -124,7 +155,7 @@
 
             <!-- <div id="option3">
               <div class="photos">
-                <!-- <img id="myImg" src="images/waldorfStadiumApartments.png" alt="Airport Garden Inn, Auckland" style="width:100%; height: 100%;"> -->
+                <!<img id="myImg" src="images/waldorfStadiumApartments.png" alt="Airport Garden Inn, Auckland" style="width:100%; height: 100%;"> -->
               <!-- </div>
             </div> -->
 
@@ -149,7 +180,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrNCqnem6SPV87biSX5ZohCU8Vx6O-hfs&libraries=places"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script src="js/jquery-ui.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
