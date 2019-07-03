@@ -512,7 +512,7 @@ $( function() {
     $( "#datepicker2" ).datepicker();
   } );
 
-$(".back").click(function(){
+$(".backToStart").click(function(){
   $('#options').fadeIn(300);
   $('#sections').fadeIn(300);
   $('.search').fadeIn(300);
@@ -549,6 +549,7 @@ function fourGuests() {
   var d = document.getElementById("btn4").value;
   document.getElementById("guestsTitle").innerHTML = d;
 }
+
 
 var maxNumberOnScreen = 3;
 var currentTab = 'accommodationOptions';
@@ -588,7 +589,7 @@ function clickOnPagination(num){
 }
 
 function showMovieThumbnails(start, end){
-  document.getElementById('moviesList').innerHTML = null;
+  document.getElementById('moviesList').innerHTML = '';
   for (var i = start; i < end; i++) {
         var movie = accommodationOptions[i];
 
@@ -596,7 +597,7 @@ function showMovieThumbnails(start, end){
             movieCard += '<div class="movieThumb movieThumb2 card h-100" data-id="'+accommodationOptions.id+'">';
                 movieCard += '<img src="images/posters/'+movie.image+'" class="card-img-top" alt="">';
                 movieCard += '<div class="card-body">';
-                    movieCard += '<h5 class="card-title">'+accommodationOptions.title+'</h5>';
+                    movieCard += '<h5 class="card-title">'+movie.title+'</h5>';
                 movieCard += '</div>';
             movieCard += '</div>';
         movieCard += '</div>';

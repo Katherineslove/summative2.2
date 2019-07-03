@@ -307,23 +307,23 @@ body{
       position: absolute;
     }
 
-.travellers{
-  background-color: white;
-  width: 94.5%;
-  height: 18%;
-  position: relative;
-  top: 11%;
-  left: 2.5%;
-  border: 1px solid #808080;
-  border-radius: 10px;
-  }
+    .travellers{
+      background-color: white;
+      width: 94.5%;
+      height: 18%;
+      position: relative;
+      top: 11%;
+      left: 2.5%;
+      border: 1px solid #808080;
+      border-radius: 10px;
+      }
 
-  #guestsTitle {
-    position: absolute;
-    left: 25%;
-    color: black;
-    font-size: 17px;
-  }
+      #guestsTitle {
+        position: absolute;
+        left: 25%;
+        color: black;
+        font-size: 17px;
+      }
 
 .search{
   background-color: #808080;
