@@ -13,14 +13,14 @@
 
   <div id="pageContainer">
 
-    <div class="getStart started">
-      <div class="getStartContent startedContent">
+    <div class="getStart">
+      <div class="getStartContent">
         <img id="logo" class="image100" src="images/logo.png" alt="">
-        <button id="start" class="btn upper hidden">Book your next adventure</button>
+        <button id="start" class="btn upper">Book your next adventure</button>
       </div>
     </div>
 
-    <div id="contentContainer" class="">
+    <div id="contentContainer" class="contentContainerStart">
       <div id="content">
         <div id="options">
           <button id="hotel" class="hotel"><h1>Hotel</h1></button>
@@ -61,13 +61,15 @@
           <div class="travellers">
                   <div class="btn-group">
                     <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-                        <img src="images/travellers.png" id="sectionsIcons" alt=""><h1>Guests:</h1>
+                        <img src="images/travellers.png" id="sectionsIcons" alt="">
+                        <h1>Guests:</h1>
+                        <p id="guestsTitle"></p>
                     </button>
                     <div class="dropdown-menu dropdown-menu-lg-right">
-                      <button class="dropdown-item" type="button">1</button>
-                      <button class="dropdown-item" type="button">2</button>
-                      <button class="dropdown-item" type="button">3</button>
-                      <button class="dropdown-item" type="button">4</button>
+                      <button id="btn1" name="subject" type="submit" value="1 Guest" onclick="oneGuest()">1</button>
+                      <button id="btn2" name="subject" type="submit" value="2 Guests" onclick="twoGuests()">2</button>
+                      <button id="btn3" name="subject" type="submit" value="3 Guests" onclick="threeGuests()">3</button>
+                      <button id="btn4" name="subject" type="submit" value="4 Guests" onclick="fourGuests()">4</button>
                     </div>
                   </div>
             </div>

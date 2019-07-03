@@ -318,6 +318,13 @@ body{
   border-radius: 10px;
   }
 
+  #guestsTitle {
+    position: absolute;
+    left: 25%;
+    color: black;
+    font-size: 17px;
+  }
+
 .search{
   background-color: #808080;
   width: 35%;

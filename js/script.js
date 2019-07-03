@@ -531,5 +531,30 @@ $( function() {
       $('#details').fadeIn(300);
     });
 
+//     function myFunction() {
+//   var a = document.getElementById("btn1").value;
+//   document.getElementById("demo").innerHTML = a
+// }
+
+function oneGuest() {
+  var a = document.getElementById("btn1").value;
+  document.getElementById("guestsTitle").innerHTML = a;
+}
+
+function twoGuests() {
+  var b = document.getElementById("btn2").value;
+  document.getElementById("guestsTitle").innerHTML = b;
+}
+
+function threeGuests() {
+  var c = document.getElementById("btn3").value;
+  document.getElementById("guestsTitle").innerHTML = c;
+}
+
+function fourGuests() {
+  var d = document.getElementById("btn4").value;
+  document.getElementById("guestsTitle").innerHTML = d;
+}
+
 
 google.maps.event.addDomListener(window, 'load', initMap);
