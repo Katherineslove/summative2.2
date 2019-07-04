@@ -101,7 +101,7 @@ var accommodationOptions = [
     maxNight: 15,
     minPeople: 1,
     maxPeople: 4,
-    description: 'Enjoy your complimentary continental breakfast or a cupa in your own private sunny courtyard surrounded by native plants and the odd croaking frog',
+    description: 'Enjoy a cupa in your own private sunny courtyard surrounded by native plants and the odd croaking frog',
     image: 'dunedin.png'
   },
   {
@@ -472,14 +472,14 @@ $(document).ready(function(){
     $(".search").click(function(){
       var inputCheck = true;
       $('input').each(function() {
-          // if(!$(this).val()){
-          //   Swal.fire(
-          //     'Error!',
-          //     'You need to fill in all of the boxes',
-          //     'error'
-          //     )
-          //    inputCheck = false;
-          // }
+          if(!$(this).val()){
+            Swal.fire(
+              'Error!',
+              'You need to fill in all of the sections',
+              'error'
+              )
+             inputCheck = false;
+          }
       });
 
       if (inputCheck === true) {
@@ -528,9 +528,11 @@ $("#map").click(function(){
 
 function displayRooms() {
 
+  var optionSelect = document.getElementById('options');
+  var optionValue =  document.getElementById('options').value;
+
   var locationSelect = document.getElementById('locationSelect');
   var locationValue = locationSelect.options[locationSelect.selectedIndex].text;
-
 
   console.log(dateDiff);
 
@@ -545,7 +547,6 @@ function displayRooms() {
     }
   }
 
-
   for (var i = 0; i < finalArray.length; i++) {
 
     var card = '';
@@ -555,16 +556,14 @@ function displayRooms() {
         card += '<div class="card-body">';
         card += '<h5 class="card-title">'+finalArray[i].title+'</h5>';
         card +=   '<p class="card-text">' + finalArray[i].description +'</p>';
-        card +=   '<button href="#" class="btn btn-primary"> Go somewhere</button>';
+        card +=   '<p class="card-text">' + '$' + finalArray[i].cost +'</p>';
+        card +=   '<button href="#" class="btn btn-primary"> Make a booking </button>';
       card +=   '</div>';
     card +=   '</div>';
     card += '</div>'
 
     document.getElementById('filter').innerHTML += card;
   }
-
-
-
 
 }
 var dateDiff
