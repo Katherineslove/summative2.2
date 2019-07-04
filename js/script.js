@@ -528,19 +528,33 @@ $("#map").click(function(){
 
 function displayRooms() {
 
-  var select = document.getElementById('locationSelect');
-  console.log(select.options[select.selectedIndex].text);
+  var locationSelect = document.getElementById('locationSelect');
+  var locationValue = locationSelect.options[locationSelect.selectedIndex].text;
 
+
+  console.log(dateDiff);
+
+  var guestSelect = document.getElementById('guestSelect');
+  var guestValue = parseInt(guestSelect.options[guestSelect.selectedIndex].text);
+
+  var finalArray = [];
 
   for (var i = 0; i < accommodationOptions.length; i++) {
+    if ((dateDiff >= accommodationOptions[i].minNight && dateDiff <= accommodationOptions[i].maxNight) && (guestValue >= accommodationOptions[i].minPeople && guestValue <= accommodationOptions[i].maxPeople)) {
+      finalArray.push(accommodationOptions[i]);
+    }
+  }
+
+
+  for (var i = 0; i < finalArray.length; i++) {
 
     var card = '';
     card += '<div class="col-12 col-sm-6 col-md-4 mb-3 text-center">';
     card += '<div class="card">';
-        card += '<img src="images/thumbnails/'+accommodationOptions[i].image+ '" class="card-img-top" alt="">';
+        card += '<img src="images/thumbnails/'+finalArray[i].image+ '" class="card-img-top" alt="">';
         card += '<div class="card-body">';
-        card += '<h5 class="card-title">'+accommodationOptions[i].title+'</h5>';
-        card +=   '<p class="card-text">' + accommodationOptions[i].description +'</p>';
+        card += '<h5 class="card-title">'+finalArray[i].title+'</h5>';
+        card +=   '<p class="card-text">' + finalArray[i].description +'</p>';
         card +=   '<button href="#" class="btn btn-primary"> Go somewhere</button>';
       card +=   '</div>';
     card +=   '</div>';
@@ -548,9 +562,28 @@ function displayRooms() {
 
     document.getElementById('filter').innerHTML += card;
   }
+
+
+
+
+}
+var dateDiff
+var select = function(dateStr) {
+    var d1 = $('#datepicker').datepicker('getDate');
+    var d2 = $('#datepicker2').datepicker('getDate');
+    var diff = 0;
+    if (d1 && d2) {
+          diff = Math.floor((d2.getTime() - d1.getTime()) / 86400000); // ms per day
+    }
+    dateDiff = diff;
 }
 
-
+$("#datepicker").datepicker({
+  minDate: new Date(2019, 7 - 1, 8),
+  maxDate: new Date(2019, 7 - 1, 28),
+  onSelect: select
+});
+$('#datepicker2').datepicker({onSelect: select});
 
 
 
