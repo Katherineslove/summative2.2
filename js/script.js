@@ -1,3 +1,5 @@
+// The array of all my accommodation options.
+
 var accommodationOptions = [
   {
     id: 1,
@@ -136,240 +138,14 @@ var accommodationOptions = [
   }
 ];
 
-var map;
-var allMarkers = [
-  {
-    id:1,
-    lat: -36.846580,
-    lng: 174.773410,
-    title: 'Waldorf Stadium Apartments Hotel',
-  },
-  {
-    id:2,
-    lat: -36.975460,
-    lng: 174.816870,
-    title: 'Airport Garden Inn',
-  },
-  {
-    id:3,
-    lat: -37.780841,
-    lng: 175.277586,
-    title: 'Backpackers Central Hamilton',
-  },
-  {
-    id:4,
-    lat: -41.106991,
-    lng: 173.002472,
-    title: "Serene Studio",
-  },
-  {
-    id:5,
-    title: 'Hilton Queenstown Resort & Spa',
-    lat: -45.029461,
-    lng: 168.727844,
-  },
-  {
-    id:6,
-    title: 'Jailhouse Accommodation',
-    lat: -43.543424,
-    lng: 172.614116,
-  },
-  {
-    id:7,
-    title: 'Private Secluded House',
-    lat: -45.900988,
-    lng: 170.509934,
-  },
-  {
-    id:8,
-    lat: -39.478718,
-    lng: 176.882508,
-    title: 'Albatross Motel',
-  },
-  {
-    id:9,
-    title: 'Egmont Eco',
-    lat: -39.070399,
-    lng: 174.069812,
-  }
-];
 
-function initMap(){
-    map = new google.maps.Map(document.getElementById('details'), {
-      center: {lat: -40.9006, lng: 174.8860},
-      zoom: 5.3,
-      backgroundColor: '#48dbfb',
-      styles: [
-          {
-              featureType: 'water',
-              stylers: [
-                    { color: '#48dbfb'}
-              ]
-          },
-          {
-              featureType: 'road',
-              elementType: 'geometry',
-              stylers: [
-                  {
-                      lightness: '-40'
-                    }
-              ]
-          },
-          {
-              featureType: 'road',
-              elementType: 'labels.text.fill',
-              stylers: [
-                  { color: '#34495e'}
-              ]
-          },
-          {
-            featureType: 'road.highway',
-            stylers: [
-                {
-                    visibility: 'off'
-                }
-            ]
-          },
-          {
-              featureType: 'landscape',
-              stylers: [
-                 {
-                     color: '#2ecc71'
-                 }
-              ]
-          },
-          {
-              featureType: 'landscape.man_made',
-              stylers: [
-                  {
-                      color: '#27ae60'
-                  }
-              ]
-          },
-          {
-              featureType: 'transit',
-              stylers: [
-                  {
-                      visibility: 'off'
-                  }
-              ]
-          }
-      ]
-    });
-
-    for (var i = 0; i < allMarkers.length; i++) {
-        var marker = new google.maps.Marker({
-            position: {
-                lat: allMarkers[i].lat,
-                lng: allMarkers[i].lng
-            },
-            map: map,
-            animation: google.maps.Animation.DROP,
-            markerTitle: allMarkers[i].title,
-            markerID: allMarkers[i].id
-        });
-        addClickEventToMarker(marker);
-    }
-
-    var infobox;
-    var firstMarker;
-    var secondMarker;
-    function addClickEventToMarker(singleMarker){
-
-        if(infobox){
-            infobox.close();
-        }
-        infobox = new google.maps.InfoWindow();
-        google.maps.event.addListener(singleMarker, 'click', function(){
-            // console.log('position of singleMarker is ' + singleMarker.position);
-            infobox.setContent('<div><h3>'+singleMarker.markerTitle+'</h3></div>');
-            infobox.open(map, singleMarker);
-
-            for (var i = 0; i < allMarkers.length; i++) {
-                if (allMarkers[i].id === singleMarker.markerID) {
-                    var markerSingle = allMarkers[i];
-                    break;
-                }
-            }
-
-            $('#details').show();
-            $('#details').find('h2').text(markerSingle['title']);
-            $('#details').find('p').text(markerSingle['description']);
-            $('#mon').text(markerSingle['openingHours']['Monday']);
-            $('#tues').text(markerSingle['openingHours']['Tuesday']);
-
-            // singleMarker.setIcon('images/blueMarker.png');
-
-            if(firstMarker){
-                // console.log(firstMarker);
-                // console.log('first marker has a value');
-                if(secondMarker){
-                    firstMarker.setIcon('images/redMarker.png');
-                    secondMarker.setIcon('images/redMarker.png');
-                    secondMarker = null;
-                    firstMarker = singleMarker;
-                    singleMarker.setIcon('images/blueMarker.png');
-                    if(directionsDisplay){
-                        directionsDisplay.setMap(null);
-                    }
-                } else {
-                    // console.log('we are now setting second marker');
-                    secondMarker = singleMarker;
-                    singleMarker.setIcon('images/blueMarker.png');
-                    getDirections();
-                }
-            } else{
-                firstMarker = singleMarker;
-                singleMarker.setIcon('images/blueMarker.png');
-                // console.log('We have now set first Marker');
-            }
-            // console.log('marker 1 location is ' + firstMarker.position);
-            // console.log('marker 2 location is ' + secondMarker.position);
-
-        });
-    }
-    var directionsDisplay;
-    function getDirections(){
-        // console.log('show me the directions');
-        var directionsService = new google.maps.DirectionsService();
-        directionsDisplay = new google.maps.DirectionsRenderer({
-            polylineOptions: {
-                strokeOpacity: 0.5,
-                strokeColor: 'red',
-                strokeWeight: 10
-            }
-        });
-
-        directionsDisplay.setMap(map);
-
-        directionsService.route({
-            origin: firstMarker.position,
-            destination: secondMarker.position,
-            travelMode: 'DRIVING'
-        }, function(response, status){
-            if(status == 'OK'){
-                // console.log(response.routes[0].legs);
-                for (var i = 0; i < response.routes[0].legs.length; i++) {
-                    console.log(response.routes[0].legs[i].distance.text);
-                    console.log(response.routes[0].legs[i].duration.text);
-                }
-                directionsDisplay.setDirections(response);
-
-
-            } else if(status == 'NOT_FOUND'){
-                console.log('either your origin or destination is invalid');
-            } else if(status == 'ZERO_RESULTS'){
-                alert('sorry there is no routes available');
-            }
-        })
-    }
-
-}
-
+// Everything that is working on load.
 $(document).ready(function(){
 
   var started = false;
 
+
+// When the start button is clicked this function begins to work
   $('#start').click(function(){
     if(started === false){
       $(this).fadeOut(1000);
@@ -382,8 +158,7 @@ $(document).ready(function(){
       $('.travellers').removeClass('card-img-top guestsOverlay');
       setTimeout(function(){
         started = true;
-      }, 1000)
-
+      }, 1000);
     }
   })
 
@@ -395,81 +170,43 @@ $(document).ready(function(){
       $('#contentContainer').addClass('contentContainerStart');
       setTimeout(function(){
         started = false;
-      }, 1000)
+      }, 1000);
     }
   })
  //-----------------------------------------
-
+// The code for the buttons to change colour
   $('#hotel').click(function(){
-    $('.hotel').css("background", "black");
-    $('.motel').css("background", "#808080");
-    $('.house').css("background", "#808080");
-    $('.hostel').css("background", "#808080");
+    $('.hotel').css('background', 'black');
+    $('.motel').css('background', '#808080');
+    $('.house').css('background', '#808080');
+    $('.hostel').css('background', '#808080');
   });
 
   $('#motel').click(function(){
-    $('.hotel').css("background", "#808080");
-    $('.motel').css("background", "black");
-    $('.house').css("background", "#808080");
-    $('.hostel').css("background", "#808080");
+    $('.hotel').css('background', '#808080');
+    $('.motel').css('background', 'black');
+    $('.house').css('background', '#808080');
+    $('.hostel').css('background', '#808080');
   });
 
   $('#house').click(function(){
-    $('.hotel').css("background", "#808080");
-    $('.motel').css("background", "#808080");
-    $('.house').css("background", "black");
-    $('.hostel').css("background", "#808080");
+    $('.hotel').css('background', '#808080');
+    $('.motel').css('background', '#808080');
+    $('.house').css('background', 'black');
+    $('.hostel').css('background', '#808080');
   });
 
   $('#hostel').click(function(){
-    $('.hotel').css("background", "#808080");
-    $('.motel').css("background", "#808080");
-    $('.house').css("background", "#808080");
-    $('.hostel').css("background", "black");
-  })
+    $('.hotel').css('background', '#808080');
+    $('.motel').css('background', '#808080');
+    $('.house').css('background', '#808080');
+    $('.hostel').css('background', 'black');
+  });
 
    //-----------------------------------------
+// when the search button is clicked show an error or proceed
 
-
-    var input = document.getElementById('autoComplete');
-    var autoComplete = new google.maps.places.Autocomplete(input, options);
-    autoComplete.addListener('place_changed', function(){
-      console.log('the place has been changed');
-      var place = autoComplete.getPlace();
-      console.log(place);
-    });
-
-    var options = {
-      types: ['(cities)'],
-      componentRestrictions: {country: 'nz'}
-    };
-
-    $("#card").click(function(){
-
-        $(".card-body").toggle();
-
-    });
-
-    $("#guestsCard").click(function guestsCardpopUp(){
-
-        $(".guestsCard-body").toggle();
-
-        var count = 1;
-        var countEl = document.getElementById("count");
-        function plus(){
-            count++;
-            countEl.value = count;
-        }
-        function minus(){
-          if (count > 1) {
-            count--;
-            countEl.value = count;
-          }
-        }
-
-    });
-
-    $(".search").click(function(){
+    $('.search').click(function(){
       var inputCheck = true;
       $('input').each(function() {
           if(!$(this).val()){
@@ -477,7 +214,7 @@ $(document).ready(function(){
               'Error!',
               'You need to fill in all of the sections',
               'error'
-              )
+            );
              inputCheck = false;
           }
       });
@@ -492,40 +229,32 @@ $(document).ready(function(){
           next();
         });
         displayRooms();
-      }
+      };
 
     });
 
-
-
 });
 
+// code for the calenders to work
 $( function() {
-    $( "#datepicker" ).datepicker();
+    $( '#datepicker' ).datepicker();
   } );
 
 $( function() {
-    $( "#datepicker2" ).datepicker();
+    $( '#datepicker2' ).datepicker();
   } );
 
-$(".backToStart").click(function(){
+$('.backToStart').click(function(){
   $('#options').fadeIn(300);
   $('#sections').fadeIn(300);
   $('.search').fadeIn(300);
   $('#filter').fadeOut(300);
-  $('#map').fadeOut(300);
   $('#places').fadeOut(300);
   $('#details').hidden;
   $('#results').addClass('hidden');
 });
 
-$("#map").click(function(){
-  $('#filter').fadeOut(300);
-  $('#places').fadeOut(300);
-  console.log('working');
-  $('#details').fadeIn(300);
-});
-
+// function that shows the accommodation options
 function displayRooms() {
 
   var optionSelect = document.getElementById('options');
@@ -544,8 +273,8 @@ function displayRooms() {
   for (var i = 0; i < accommodationOptions.length; i++) {
     if ((dateDiff >= accommodationOptions[i].minNight && dateDiff <= accommodationOptions[i].maxNight) && (guestValue >= accommodationOptions[i].minPeople && guestValue <= accommodationOptions[i].maxPeople)) {
       finalArray.push(accommodationOptions[i]);
-    }
-  }
+    };
+};
 
   for (var i = 0; i < finalArray.length; i++) {
 
@@ -560,30 +289,28 @@ function displayRooms() {
         card +=   '<button href="#" class="btn btn-primary"> Make a booking </button>';
       card +=   '</div>';
     card +=   '</div>';
-    card += '</div>'
+    card += '</div>';
 
     document.getElementById('filter').innerHTML += card;
   }
-
 }
-var dateDiff
+
+
+var dateDiff;
 var select = function(dateStr) {
     var d1 = $('#datepicker').datepicker('getDate');
     var d2 = $('#datepicker2').datepicker('getDate');
     var diff = 0;
     if (d1 && d2) {
           diff = Math.floor((d2.getTime() - d1.getTime()) / 86400000); // ms per day
-    }
+    };
     dateDiff = diff;
-}
+};
 
-$("#datepicker").datepicker({
+$('#datepicker').datepicker({
   minDate: new Date(2019, 7 - 1, 8),
   maxDate: new Date(2019, 7 - 1, 28),
-  onSelect: select
+  onSelect: select,
 });
+
 $('#datepicker2').datepicker({onSelect: select});
-
-
-
-google.maps.event.addDomListener(window, 'load', initMap);

@@ -16,7 +16,7 @@
 
     <div class="getStart started">
       <div class="getStartContent startedContent">
-        <img id="logo" class="image100" src="images/logo.png" alt="">
+        <img id="logo" class="image100" src="images/logo.png" alt="icon">
         <button id="start" class="btn upper hidden">Book your next adventure</button>
       </div>
     </div>
@@ -45,11 +45,11 @@
 
               <div id="location" class="row d-flex justify-content-center align-items-center">
                 <div class="col-1">
-                  <img src="images/location.png" class="img-fluid" alt="">
+                  <img src="images/location.png" class="img-fluid" alt="location icon">
                 </div>
                 <div class="col-11">
                   <div class="form-group row mb-0">
-                  <label for="staticEmail" class="col-sm-2 col-form-label">Location:</label>
+                  <label class="col-sm-2 col-form-label">Location:</label>
                   <div class="col-sm-10 d-flex align-items-center">
                     <select class="form-control" id="locationSelect">
                       <option>Wellington</option>
@@ -70,11 +70,11 @@
 
               <div class="checkIn row d-flex justify-content-center">
                 <div class="col-1">
-                  <img src="images/calendar.png" class="img-fluid" alt="">
+                  <img src="images/calendar.png" class="img-fluid" alt="calendar icon">
                 </div>
                 <div class="col-11">
                   <div class="form-group row mb-0">
-                  <label for="staticEmail" class="col-sm-2 col-form-label">Check In:</label>
+                  <label class="col-sm-2 col-form-label">Check In:</label>
                   <div class="col-sm-10 d-flex align-items-center">
                     <input type="text"  class="form-control" id="datepicker" placeholder="mm/dd/yy">
                   </div>
@@ -84,11 +84,11 @@
 
               <div class="checkOut row d-flex justify-content-center">
                 <div class="col-1">
-                  <img src="images/calendar.png" class="img-fluid" alt="">
+                  <img src="images/calendar.png" class="img-fluid" alt="calendar icon">
                 </div>
                 <div class="col-11">
                   <div class="form-group row mb-0">
-                  <label for="staticEmail" class="col-sm-2 col-form-label">Check Out:</label>
+                  <label class="col-sm-2 col-form-label">Check Out:</label>
                   <div class="col-sm-10 d-flex align-items-center">
                     <input type="text"  class="form-control" id="datepicker2" placeholder="mm/dd/yy">
                   </div>
@@ -98,11 +98,11 @@
 
               <div class="travellers row d-flex justify-content-center">
                 <div class="col-1">
-                  <img src="images/travellers.png" class="img-fluid" alt="">
+                  <img src="images/travellers.png" class="img-fluid" alt="guest icon">
                 </div>
                 <div class="col-11">
                   <div class="form-group row mb-0">
-                  <label for="staticEmail" class="col-sm-2 col-form-label">Guest:</label>
+                  <label class="col-sm-2 col-form-label">Guest:</label>
                   <div class="col-sm-10 d-flex align-items-center">
                     <select class="form-control" id="guestSelect">
                       <option>1</option>
@@ -124,42 +124,20 @@
             <div id="results" class="hidden">
               <div class="row">
                   <div class="col">
-                    <img src="images/icons8-back-50.png" class="backToStart">
+                    <img src="images/icons8-back-50.png" alt="icon" class="backToStart">
                   </div>
               </div>
             </div>
 
-            <div id="filter" class="hidden row">
-              <!-- <div class="row">
-                <div class="col-sm-8">col-sm-8</div>
-                <div class="col-sm-4">col-sm-4</div>
-              </div> -->
-
+            <div id="filter" class="hidden row"
             </div>
-        </div>
-
-
-        <div id="map" class="mapLink hidden">
-          <p class="text">map</p>
-              <div id="placeInfo"></div>
-
-              <div id="details" class="hidden">
-                  <p></p>
-                  <ul>
-                      <li id="mon"></li>
-                      <li id="tues"></li>
-                  </ul>
-              </div>
         </div>
 
     </div>
   </div>
-
-</div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrNCqnem6SPV87biSX5ZohCU8Vx6O-hfs&libraries=places"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery-ui.js"></script>
