@@ -5,7 +5,7 @@
 }
 
 body, html{
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 body{
@@ -96,7 +96,7 @@ body{
 }
 
 .hidden{
-  display: none;
+  display: none !important;
 }
 
 .changeColour{
@@ -391,28 +391,24 @@ body{
   border-top-right-radius: 25px;
   position: relative;
   margin: 0 auto;
+  top: 2.5%;
   height: 10%;
+  width: 87vw;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
-#results img {
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  left: 1%;
-}
-
 #filter{
-  width: 56%;
-  height: 7%;
-  background-color: white;
-  position: relative;
+  display: flex;
   top: 4%;
-  left: 1%;
+  left: 5%;
+  width: 85%;
+  position: relative;
+  background-color: white;
   color: #c8c8c8;
   border: 1px solid #808080;
+  flex-wrap: wrap;
 }
 
 .text {

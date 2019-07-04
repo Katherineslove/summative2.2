@@ -6,7 +6,7 @@ var accommodationOptions = [
     cost: 157,
     lat: -36.846580,
     lng: 174.773410,
-    location: 'AUCKLAND',
+    location: 'Auckland',
     minNight: 1,
     maxNight: 5,
     minPeople: 1,
@@ -21,7 +21,7 @@ var accommodationOptions = [
     cost: 90,
     lat: -36.975460,
     lng: 174.816870,
-    location: 'AUCKLAND',
+    location: 'Auckland',
     minNight: 2,
     maxNight: 4,
     minPeople: 3,
@@ -36,7 +36,7 @@ var accommodationOptions = [
     cost: 30,
     lat: -37.780841,
     lng: 175.277586,
-    location: 'HAMILTON',
+    location: 'Hamilton',
     minNight: 1,
     maxNight: 10,
     minPeople: 1,
@@ -51,7 +51,7 @@ var accommodationOptions = [
     cost: 240,
     lat: -41.106991,
     lng: 173.002472,
-    location: 'MOTEUKA',
+    location: 'Moteuka',
     minNight: 2,
     maxNight: 15,
     minPeople: 1,
@@ -66,7 +66,7 @@ var accommodationOptions = [
     cost: 157,
     lat: -45.029461,
     lng: 168.727844,
-    location: 'QUEENSTOWN',
+    location: 'Queenstown',
     minNight: 1,
     maxNight: 5,
     minPeople: 1,
@@ -81,7 +81,7 @@ var accommodationOptions = [
     cost: 30,
     lat: -43.543424,
     lng: 172.614116,
-    location: 'CHRISTCHURCH',
+    location: 'Christchurch',
     minNight: 1,
     maxNight: 10,
     minPeople: 1,
@@ -96,6 +96,7 @@ var accommodationOptions = [
     cost: 240,
     lat: -45.900988,
     lng: 170.509934,
+    location: 'Dunedin',
     minNight: 2,
     maxNight: 15,
     minPeople: 1,
@@ -110,6 +111,7 @@ var accommodationOptions = [
     cost: 90,
     lat: -39.478718,
     lng: 176.882508,
+    location: 'Napier',
     minNight: 2,
     maxNight: 4,
     minPeople: 3,
@@ -124,6 +126,7 @@ var accommodationOptions = [
     cost: 30,
     lat: -39.070399,
     lng: 174.069812,
+    location: 'New Plymouth',
     minNight: 1,
     maxNight: 10,
     minPeople: 1,
@@ -398,10 +401,10 @@ $(document).ready(function(){
  //-----------------------------------------
 
   $('#hotel').click(function(){
-      $('.hotel').css("background", "black");
-      $('.motel').css("background", "#808080");
-      $('.house').css("background", "#808080");
-      $('.hostel').css("background", "#808080");
+    $('.hotel').css("background", "black");
+    $('.motel').css("background", "#808080");
+    $('.house').css("background", "#808080");
+    $('.hostel').css("background", "#808080");
   });
 
   $('#motel').click(function(){
@@ -467,16 +470,30 @@ $(document).ready(function(){
     });
 
     $(".search").click(function(){
-      // $('input').each(function() {
-      //     if(!$(this).val()){
-      //         alert('Some fields are empty');
-      //        return false;
-      //     }
-      // });
-      $('#options').fadeOut(1000);
-      $('#sections').fadeOut(1000);
-      $('.search').fadeOut(1000);
-      $('#results').removeClass('hidden');
+      var inputCheck = true;
+      $('input').each(function() {
+          // if(!$(this).val()){
+          //   Swal.fire(
+          //     'Error!',
+          //     'You need to fill in all of the boxes',
+          //     'error'
+          //     )
+          //    inputCheck = false;
+          // }
+      });
+
+      if (inputCheck === true) {
+        $('#options').fadeOut(1000);
+        $('#sections').fadeOut(1000);
+        $('.search').fadeOut(1000);
+        $('#results').delay(1000).queue(function(next){
+          $('#results').removeClass('hidden');
+          $('#filter').removeClass('hidden');
+          next();
+        });
+        displayRooms();
+      }
+
     });
 
 
@@ -497,9 +514,9 @@ $(".backToStart").click(function(){
   $('.search').fadeIn(300);
   $('#filter').fadeOut(300);
   $('#map').fadeOut(300);
-  $('#results').fadeOut(300);
   $('#places').fadeOut(300);
   $('#details').hidden;
+  $('#results').addClass('hidden');
 });
 
 $("#map").click(function(){
@@ -509,88 +526,32 @@ $("#map").click(function(){
   $('#details').fadeIn(300);
 });
 
-function oneGuest() {
-  var a = document.getElementById("btn1").value;
-  document.getElementById("guestsTitle").innerHTML = a;
+function displayRooms() {
+
+  var select = document.getElementById('locationSelect');
+  console.log(select.options[select.selectedIndex].text);
+
+
+  for (var i = 0; i < accommodationOptions.length; i++) {
+
+    var card = '';
+    card += '<div class="col-12 col-sm-6 col-md-4 mb-3 text-center">';
+    card += '<div class="card">';
+        card += '<img src="images/thumbnails/'+accommodationOptions[i].image+ '" class="card-img-top" alt="">';
+        card += '<div class="card-body">';
+        card += '<h5 class="card-title">'+accommodationOptions[i].title+'</h5>';
+        card +=   '<p class="card-text">' + accommodationOptions[i].description +'</p>';
+        card +=   '<button href="#" class="btn btn-primary"> Go somewhere</button>';
+      card +=   '</div>';
+    card +=   '</div>';
+    card += '</div>'
+
+    document.getElementById('filter').innerHTML += card;
+  }
 }
 
-function twoGuests() {
-  var b = document.getElementById("btn2").value;
-  document.getElementById("guestsTitle").innerHTML = b;
-}
-
-function threeGuests() {
-  var c = document.getElementById("btn3").value;
-  document.getElementById("guestsTitle").innerHTML = c;
-}
-
-function fourGuests() {
-  var d = document.getElementById("btn4").value;
-  document.getElementById("guestsTitle").innerHTML = d;
-}
 
 
-// var maxNumberOnScreen = 3;
-// var currentTab = 'accommodationOptions';
-// var pageContainer = document.getElementById('pageContainer');
-//
-//
-// function showMovies(){
-//   pageContainer.innerHTML = '<div id="moviesList" class="row"></div>';
-//   pageContainer.innerHTML += '<div class="row"><div class="col"><nav><ul id="paginationMovies" class="pagination justify-content-end"></ul></nav></div></div>';
-//   var numberOfPages = Math.ceil(accommodationOptions.type / maxNumberOnScreen);
-//   if(numberOfPages > 1){
-//       var pagination = document.getElementById('paginationAccommodation');
-//       for (var i = 0; i < numberOfPages; i++) {
-//           pagination.innerHTML += '<li class="page-item"><a class="page-link" onclick="clickOnPageination('+(i+1)+');" href="#">'+(i+1)+'</a></li>';
-//       }
-//   }
-//
-//   if(maxNumberOnScreen > accommodationOptions.length){
-//       showMovieThumbnails(0, accommodationOptions.length);
-//   } else {
-//       showMovieThumbnails(0, maxNumberOnScreen);
-//   }
-//
-// }
-//
-// showMovies();
-//
-// function clickOnPagination(num){
-//     console.log('page clicked on ' + num);
-//     var max = num * maxNumberOnScreen;
-//     var min = max - maxNumberOnScreen;
-//
-//     if(max > accommodationOptions.length){
-//         max = accommodationOptions.length;
-//     }
-//     showMovieThumbnails(min, max);
-// }
-//
-// function showMovieThumbnails(start, end){
-//   document.getElementById('moviesList').innerHTML = '';
-//   for (var i = start; i < end; i++) {
-//         var movie = accommodationOptions[i];
-//
-//           var movieCard = '<div class="col-12 col-sm-6 col-md-3 mb-3 text-center">';
-//             movieCard += '<div class="movieThumb movieThumb2 card h-100" data-id="'+accommodationOptions.id+'">';
-//                 movieCard += '<img src="images/posters/'+movie.image+'" class="card-img-top" alt="">';
-//                 movieCard += '<div class="card-body">';
-//                     movieCard += '<h5 class="card-title">'+movie.title+'</h5>';
-//                 movieCard += '</div>';
-//             movieCard += '</div>';
-//         movieCard += '</div>';
-//
-//         document.getElementById('moviesList').innerHTML += movieCard;
-//     }
-//
-//     var movieThumbnails = document.getElementsByClassName('movieThumb2');
-//     for (var i = 0; i < movieThumbnails.length; i++) {
-//         movieThumbnails[i].onclick = function(){
-//             var id = parseInt(this.dataset.id);
-//             showMoreMovie(id);
-//         };
-//     }
-// }
+
 
 google.maps.event.addDomListener(window, 'load', initMap);

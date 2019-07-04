@@ -17,7 +17,7 @@
     <div class="getStart started">
       <div class="getStartContent startedContent">
         <img id="logo" class="image100" src="images/logo.png" alt="">
-        <button id="start" class="btn upper">Book your next adventure</button>
+        <button id="start" class="btn upper hidden">Book your next adventure</button>
       </div>
     </div>
 
@@ -43,7 +43,7 @@
 
         <div id="sections">
 
-              <div id="location" class="row d-flex justify-content-center align-items-center">
+              <!-- <div id="location" class="row d-flex justify-content-center align-items-center">
                 <div class="col-1">
                   <img src="images/location.png" class="img-fluid" alt="">
                 </div>
@@ -52,6 +52,30 @@
                   <label for="staticEmail" class="col-sm-2 col-form-label">Location:</label>
                   <div class="col-sm-10 d-flex align-items-center">
                     <input type="text"  class="form-control" id="autoComplete" placeholder="eg. Wellington">
+                  </div>
+                </div>
+                </div>
+              </div> -->
+
+              <div id="location" class="row d-flex justify-content-center align-items-center">
+                <div class="col-1">
+                  <img src="images/location.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-11">
+                  <div class="form-group row mb-0">
+                  <label for="staticEmail" class="col-sm-2 col-form-label">Location:</label>
+                  <div class="col-sm-10 d-flex align-items-center">
+                    <select class="form-control" id="locationSelect">
+                      <option>Wellington</option>
+                      <option>Hamilton</option>
+                      <option>Auckland</option>
+                      <option>Christchurch</option>
+                      <option>New Plymouth</option>
+                      <option>Moteuka</option>
+                      <option>Napier</option>
+                      <option>Queenstown</option>
+                      <option>Dunedin</option>
+                    </select>
                   </div>
                 </div>
                 </div>
@@ -109,28 +133,25 @@
               <div class="search">
                 <h1 id="searchTitle">SEARCH</h1>
               </div>
+            </div>
 
-              <div id="results"class="hidden">
-                <div class="row">
+            <div id="results" class="hidden">
+              <div class="row">
+                  <div class="col">
+                    <img src="images/icons8-back-50.png" class="backToStart">
+                  </div>
               </div>
             </div>
 
+            <div id="filter" class="hidden row">
+              <!-- <div class="row">
+                <div class="col-sm-8">col-sm-8</div>
+                <div class="col-sm-4">col-sm-4</div>
+              </div> -->
+
             </div>
         </div>
 
-
-
-         <!-- class="hidden">
-            <img src="images/icons8-back-50.png" class="sectionsIcons backToStart">
-            <div class="header">
-            </div>
-        </div> -->
-
-
-
-        <!-- <div id="filter" class="hidden">
-          <p class="text">sort & filter</p>
-        </div>
 
         <div id="map" class="mapLink hidden">
           <p class="text">map</p>
@@ -143,43 +164,8 @@
                       <li id="tues"></li>
                   </ul>
               </div>
-        </div> -->
-
-        <div id="places" class="hidden">
-            <!-- <div id="option1">
-              <div class="photos"> -->
-                <!-- <img id="myImg" src="images/airportGardenInn.png" alt="Airport Garden Inn, Auckland" style="width:100%; height: 100%;">
-                <div id="myModal" class="modal">
-                  <span class="close">&times;</span>
-                  <img class="modal-content" id="img01">
-                  <div id="caption"></div>
-                </div> -->
-              <!-- </div>
-            </div> -->
-
-            <!-- <div id="option2">
-              <div class="photos">
-                <img id="myImg" src="" alt="" style="width:100%; height: 100%;">
-              </div>
-            </div> -->
-
-            <!-- <div id="option3">
-              <div class="photos">
-                <!<img id="myImg" src="images/waldorfStadiumApartments.png" alt="Airport Garden Inn, Auckland" style="width:100%; height: 100%;"> -->
-              <!-- </div>
-            </div> -->
-
-            <div id="pageContainer">
-                <div id="moviesList " class="row"></div>
-                <div class="row">
-                    <div class="col">
-                        <nav>
-                            <ul id="paginationAccommodation" class="pagination justify-content-end"></ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
         </div>
+
     </div>
   </div>
 
@@ -191,6 +177,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
